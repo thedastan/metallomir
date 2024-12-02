@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutCompany = () => {
 	return (
-		<Flex py={40} w="100%" justifyContent="center" alignItems="center">
+		<Flex py={{ md: 40, base: 16 }} w="100%" justifyContent="center" alignItems="center">
 			<Flex
 				flexDir="column"
 				justifyContent="center"
