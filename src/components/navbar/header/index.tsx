@@ -36,7 +36,7 @@ const Header = () => {
   ];
 
   return (
-    <Box p={2} fontFamily="Gilroy">
+    <Box w="100%" bg="white" position="fixed" zIndex={1000} p={2} fontFamily="Gilroy">
       <Box className="container">
         <Flex alignItems="center" justifyContent="space-between">
           <Box>

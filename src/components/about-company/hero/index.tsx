@@ -5,8 +5,9 @@ import { Box, Flex } from "@chakra-ui/react";
 
 const Hero = () => {
 	return (
-		<Box   className="container2">
-			<Box w="100%" h={{ md: 680, base: 300 }} borderRadius={{ md: "30px", base: "0px" }} overflow="hidden" position="relative">
+		 <Box p={{ md: "70px 0 0 0", base: "50px  0 0 0" }}>
+			<Box className="container2">
+			<Box w="100%" h={{ md: 650, base: 300 }} borderRadius={{ md: "30px", base: "0px" }} overflow="hidden" position="relative">
 				{/* Видео на заднем плане */}
 				<video
 					autoPlay
@@ -71,6 +72,7 @@ const Hero = () => {
 
 		 
 		</Box>
+		 </Box>
 	);
 };
 

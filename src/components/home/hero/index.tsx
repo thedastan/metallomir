@@ -21,7 +21,8 @@ const Hero = () => {
 	return (
 		<Box
 			py={20}
-			p={{ md: 0, base: 4 }}
+			 
+			p={{ md: "50px 0 0 0", base: "50px 14px 14px 14px" }}
 			position="relative"
 			bg="#ECF0F4"
 			w="100%"

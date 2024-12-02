@@ -21,7 +21,7 @@ const Looking = () => {
 	const [view, setView] = useState("card");
 
 	return (
-		<Box py={20}>
+		<Box py={{ md: 28, base: 20 }} >
 			<Box className="container">
 				<Flex flexDir="column">
 					<Flex
