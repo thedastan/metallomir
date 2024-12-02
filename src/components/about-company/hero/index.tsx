@@ -6,38 +6,15 @@ import Title from "@/components/ui/texts/Title";
 import { Metadata } from "next";
 import { NO_INDEX_PAGE } from "@/constants/seo/seo.constants";
 
-import { useForm } from 'react-hook-form';
-
 export const metadata: Metadata = {
 	title: "О компании",
 	...NO_INDEX_PAGE,
 };
 
 const Hero = () => {
-
-	const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
 	return (
-		<Box bg="red" py={20}>
-		 
-
-<form onSubmit={handleSubmit((data) => console.log(data))}>
-      <input {...register('firstName')} />
-      <input {...register('lastName', { required: true })} />
-      
-			<button type="submit">click</button>
-    </form>
-		</Box>
-	);
-};
-
-export default Hero;
-
-	{/* <Box className="container2">
+		<Box>
+			<Box className="container2">
 				<Flex
 					borderRadius={24}
 					p={{ md: 20, base: "70px 20px" }}
@@ -63,6 +40,11 @@ export default Hero;
 						</Description>
 					</Flex>
 				</Flex>
-			</Box> */}
+			</Box>
+		</Box>
+	);
+};
+
+export default Hero;
  
  
