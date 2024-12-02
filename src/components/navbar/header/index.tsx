@@ -52,7 +52,8 @@ const Header = () => {
                 <Link key={index} href={el.path}>
                   <Text
                     fontFamily="Gilroy"
-                    fontSize={20}
+                    textTransform="uppercase"
+                    fontSize={18}
                     style={{
                       borderBottom: pathname === el.path ? "solid 1px black" : "none",
                       padding: "2px",
@@ -70,7 +71,7 @@ const Header = () => {
             </Box>
 
             {/* Mobile Hamburger Menu */}
-            <Box position="absolute" ml={-8} mt={-2} zIndex={30} display={{ md: "none", base: "flex" }}>
+            <Box position={isMenuOpen ? "fixed" : "absolute"} ml={-8} mt={-2} zIndex={30} display={{ md: "none", base: "flex" }}>
               <Box
                 className={`${styles.burger} ${isMenuOpen ? styles.open : ""}`}
                 onClick={toggleMenu}>
@@ -85,7 +86,7 @@ const Header = () => {
 
       {/* Mobile Menu Drawer */}
       <Box
-        position="absolute"
+        position="fixed"
         top={0}
         right={isMenuOpen ? 0 : "-100%"}
         width="100%"

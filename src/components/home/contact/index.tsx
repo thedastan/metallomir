@@ -98,7 +98,7 @@ const Contact = () => {
 					<Box display={{ md: "flex", base: "none" }} w="100%" h={550}>
 						<Image
 						 
-							style={{ width: "100%", height: "100%" }}
+							style={{ width: "100%", height: "100%",zIndex:-2 }}
 							src={img}
 							alt="img"
 						/>
@@ -107,7 +107,7 @@ const Contact = () => {
 					<Box display={{ md: "none", base: "flex" }} w="100%" h="100%">
 						<Image
 						 
-							style={{ width: "100%", height: "100%" }}
+							style={{ width: "100%", height: "100%", zIndex:-2 }}
 							src={imgmob}
 							alt="img"
 						/>
@@ -233,6 +233,7 @@ const Contact = () => {
 									gap={3}>
 									<Button
 										type="submit"
+										zIndex={-1}
 										border="solid 1px white"
 										mt={{ base: -2, md: 3 }}
 										w={{ md: 440, base: "80%" }}
@@ -244,6 +245,7 @@ const Contact = () => {
 									</Button>
 									<Button
 										type="submit"
+										zIndex={-1}
 										border="solid 1px white"
 										mt={{ base: -2, md: 3 }}
 										w={{ md: "56px", base: "50px" }}
@@ -290,7 +292,7 @@ const Contact = () => {
 				</Flex>
 				<Box
 					display={{ md: "none", base: "block" }}
-					mt="60px"
+					mt="80px"
 					w="100%"
 					h="100%"
 					position="relative"

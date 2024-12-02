@@ -1,4 +1,5 @@
 import {
+	EMAIL_ADDRESS_LINK,
 	INSTAGRAM_LINK,
 	MOTION_WEB_LINK,
 	TELEGRAM_LINK,
@@ -91,8 +92,9 @@ const Footer = () => {
 					flexDirection={{ md: "row", base: "column" }}
 					alignItems="center"
 					justifyContent="space-between">
-					<Flex gap={4}>
-						{links.map((el, index) => (
+					<Flex flexDirection={{ md: "row", base: "column" }}  gap={4} alignItems="center">
+						 <Flex gap={4}>
+						 {links.map((el, index) => (
 							<Link key={index} href={el.path} target={"_blank"}>
 								<Text
 									p={2}
@@ -105,6 +107,10 @@ const Footer = () => {
 								</Text>
 							</Link>
 						))}
+						 </Flex>
+						<Link href={EMAIL_ADDRESS_LINK}>
+							<Text color="grey">info@metallomir.kg</Text>
+						</Link>
 					</Flex>
 					<Flex
 						mt={{ md: 0, base: 6 }}
