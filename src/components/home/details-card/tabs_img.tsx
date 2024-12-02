@@ -4,87 +4,75 @@ import { Box, Flex } from "@chakra-ui/react";
 import { useParams } from "next/navigation";
 import { useGetCatalogByIdQuery } from "@/redux/api/catalog";
 import Image from "next/image";
+import { useState } from "react";
 
 const CardTabs = () => {
 	const { id } = useParams();
-
 	const idString = Array.isArray(id) ? id[0] : id;
-
 	const { data } = useGetCatalogByIdQuery(idString);
 
-	// const { card_data } = useCardData();
+	const [activeTab, setActiveTab] = useState<number | null>(null);
 
-	// // Находим элемент по ID
-	// const cardId = typeof id === "string" ? +id : null;
-	// const el = card_data.find((el) => el.id === cardId);
 
-	// if (!el) {
-	// 	return <Text>Сервис не найден</Text>;
-	// }
+	console.log(data, "img");
 
 	return (
-		<Flex fontFamily="Gilroy">
+		<Flex fontFamily="Gilroy" direction="column" justifyContent="space-between" align="center">
 			{data && (
-				<Box
-					borderRadius={10}
-					w={{ md: 560, base: "100%" }}
-					h={{ md: "100%", base: "300px" }}
-					overflow="hidden"
-					position="relative">
-					{/* <Text>{data.title}</Text> */}
-					<Image
-						style={{ width: "100%", height: "100%", objectFit: "cover" }}
-						src={data.image}
-						alt={data.title}
-						layout="fill" 
-											 objectFit="cover"
-					/>
-				</Box>
-			)}
-			{/* <Tabs.Root
-				style={{ display: "flex", flexDirection: "column-reverse" }}
-				defaultValue="image-0">
-				<Box>
-					<Tabs.List
-						style={{
-							display: "flex",
-							gap: "6px",
-							justifyContent: "center",
-							marginTop: "6px",
+				<Box w={{ md: "560px", base: "100%" }}>
+					{/* Main Image */}
+					<Box
+						w={{ md: "560px", base: "100%" }}
+						h="335px"
+						borderRadius="md"
+						overflow="hidden"
+						position="relative"
+						bg="gray.100"
+						mx="auto"
+						mb="16px">
+						<Image
+							src={activeTab !== null ? data.images[activeTab].image : data.image} // Показываем выбранное изображение или первое
+							alt={data.title}
+							fill
+							style={{ objectFit: "cover" }}
+						/>
+					</Box>
 
-						}}>
-						{el.iamges.map((item, index) => (
-							<Tabs.Trigger key={index} value={`image-${index}`}>
-								<Box w={75} h={75} overflow="hidden" borderRadius={10}>
+					{/* Thumbnails */}
+					<Flex
+						gap="2px"
+						justifyContent="start" flexWrap="wrap">
+						{data.images.map((item, index) => (
+							<Box
+								key={index}
+								onClick={() => setActiveTab(index)} // Меняем активное изображение по клику
+								cursor="pointer"
+								padding="4px"
+								borderRadius="8px"
+								overflow="hidden"
+								transition="all 0.2s ease"
+								bg={activeTab === index ? "gray.200" : "transparent"} // Выделение активной миниатюры
+								_hover={{ bg: "gray.100" }}>
+								<Box
+									w="75px"
+									h="75px"
+									borderRadius="md"
+									overflow="hidden"
+									position="relative">
 									<Image
 										src={item.image}
 										alt={`Thumbnail ${index}`}
-										style={{
-											width: "100%",
-											height: "100%",
-											objectFit: "cover",
-										}}
+										fill
+										style={{ objectFit: "cover" }}
 									/>
 								</Box>
-							</Tabs.Trigger>
-						))}
-					</Tabs.List>
-				</Box>
-
-				<Box>
-					{el.iamges.map((item, index) => (
-						<Tabs.Content key={index} value={`image-${index}`}>
-							<Box w={484} h={335} overflow="hidden" borderRadius={10}>
-								<Image
-									src={item.image}
-									alt={`Image ${index}`}
-									style={{ width: "100%", height: "100%", objectFit: "cover" }}
-								/>
 							</Box>
-						</Tabs.Content>
-					))}
+						))}
+						 
+						 
+					</Flex>
 				</Box>
-			</Tabs.Root> */}
+			)}
 		</Flex>
 	);
 };

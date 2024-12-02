@@ -98,13 +98,13 @@ const Header = () => {
         transition="right 0.3s ease-in-out">
          
 
-        <Flex flexDirection="column" ml={6} gap={6} mt={4}>
+        <Flex flexDirection="column" textAlign="center"   gap={6} mt={8}>
           {nav.map((el, index) => (
             <Link key={index} href={el.path} onClick={toggleMenu}>
-              <Text fontSize={24}>{el.name}</Text>
+              <Text textTransform="uppercase" textAlign="center" fontSize={24}>{el.name}</Text>
             </Link>
           ))}
-          <Flex gap={4} mt={6}>
+          <Flex justifyContent="center" gap={4} mt={6}>
             {links.map((el, index) => (
               <Link key={index} href={el.path} target={"_blank"}>
                 <Text

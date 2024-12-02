@@ -6,10 +6,6 @@ import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const TextDetail = () => {
-
-
-
-
 	return (
 		<Box fontFamily="Gilroy">
 			<Box>
@@ -120,24 +116,22 @@ const TextDetail = () => {
 					</Box>
 				</Box>
 				<Link href={`tel:${PHONE_NUMBER}`} target={"_blank"}>
-								 
-							 
-				<Button
-					bg="none"
-					mt={6}
-					w={{ md:295, base: "100%" }}
-					h="56px"
-					color="black"
-					border="solid 1px black"
-					p={7}
-					borderRadius={40}>
-					<Text>
-						<FaPhoneAlt />
-					</Text>
-					<Text fontSize={18} fontWeight={400}>
-						Связаться с менеджером
-					</Text>
-				</Button>
+					<Button
+						bg="none"
+						mt={6}
+						w={{ md: 295, base: "100%" }}
+						h="56px"
+						color="black"
+						border="solid 1px black"
+						p={7}
+						borderRadius={40}>
+						<Text>
+							<FaPhoneAlt />
+						</Text>
+						<Text fontSize={18} fontWeight={400}>
+							Связаться с менеджером
+						</Text>
+					</Button>
 				</Link>
 			</Box>
 		</Box>

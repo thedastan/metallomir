@@ -16,12 +16,11 @@ export const metadata: Metadata = {
 	title: "Металлопродукция",
 	...NO_INDEX_PAGE,
 };
-
+ 
 const Hero = () => {
 	return (
 		<Box
 			py={20}
-			 
 			p={{ md: "50px 0 0 0", base: "50px 14px 14px 14px" }}
 			position="relative"
 			bg="#ECF0F4"
