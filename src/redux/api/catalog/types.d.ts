@@ -21,6 +21,11 @@ namespace CATALOG {
 			id: number;
 			image: string;
 		}>;
+		infos: Array<{
+			id: number
+			title: string
+			value: string
+		}>
 		seos: Array<{
 			id: number;
 			title: string;
@@ -30,3 +35,7 @@ namespace CATALOG {
 
 	type GetCatalogByIdReq = string | undefined;
 }
+
+
+
+ 

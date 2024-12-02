@@ -8,7 +8,15 @@ const api = index.injectEndpoints({
       }),
       providesTags: ["items"],
     }),
+
+    getByIdItem: build.query<ITEMS.GetItemByIdRes,ITEMS.GetItemByIdReq>({
+      query: (id) => ({
+        url: `items/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["items"],
+    }),
   }),
 });
 
-export const { useGetItemQuery } = api;
+export const { useGetItemQuery ,useGetByIdItemQuery} = api;

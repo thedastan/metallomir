@@ -61,10 +61,10 @@ const Hero = () => {
 							fontWeight={500}
 							fontSize={{ md: 68, base: 50 }}
 							lineHeight={{ md: "84px", base: "32px" }}>
-							МеталлоМир
+						ОсОО &quot;Металломир&quot;
 						</Title>
 						<Description color="white" fontSize={{ md: 36, base: 18 }}>
-							Создаем решения для ваших проектов
+						Доступный металлопрокат в Бишкеке.
 						</Description>
 					</Flex>
 				</Flex>

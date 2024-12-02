@@ -13,9 +13,7 @@ const CardTabs = () => {
 
 	const [activeTab, setActiveTab] = useState<number | null>(null);
 
-
-	console.log(data, "img");
-
+ 
 	return (
 		<Flex fontFamily="Gilroy" direction="column" justifyContent="space-between" align="center">
 			{data && (

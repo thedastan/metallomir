@@ -4,10 +4,6 @@ import {
 	Button,
 	Flex,
 	Input,
-	MenuContent,
-	MenuItem,
-	MenuRoot,
-	MenuTrigger,
 	Text,
 } from "@chakra-ui/react";
 import img from "@/assets/images/contact.png";
@@ -18,7 +14,6 @@ import Description from "@/components/ui/Description";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import Image from "next/image";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { GoArrowUpRight } from "react-icons/go";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -35,7 +30,7 @@ interface IFormTelegram {
 }
 
 const Contact = () => {
-	const {data} = useGetCatalogQuery()
+	const { data } = useGetCatalogQuery();
 
 	const { register, handleSubmit, reset } = useForm<IFormTelegram>();
 	const [phone, setPhone] = useState("");
@@ -43,7 +38,6 @@ const Contact = () => {
 	const TOKEN = process.env.NEXT_PUBLIC_TG_TOKEN;
 	const CHAT_ID = process.env.NEXT_PUBLIC_TG_CHAT_ID;
 
- 
 	const messageModel = (data: IFormTelegram) => {
 		let messageTG = `Name: <b>${data.text}</b>\n`;
 		messageTG += `Number: <b>${data.number}</b>\n`;
@@ -72,7 +66,6 @@ const Contact = () => {
 			});
 		}
 	};
-	
 
 	return (
 		<Box id="contact" py={{ md: 20, base: 0 }} w="100%">
@@ -97,8 +90,7 @@ const Contact = () => {
 					alignItems="end">
 					<Box display={{ md: "flex", base: "none" }} w="100%" h={550}>
 						<Image
-						 
-							style={{ width: "100%", height: "100%",zIndex:-2 }}
+							style={{ width: "100%", height: "100%", zIndex: -2 }}
 							src={img}
 							alt="img"
 						/>
@@ -106,8 +98,7 @@ const Contact = () => {
 
 					<Box display={{ md: "none", base: "flex" }} w="100%" h="100%">
 						<Image
-						 
-							style={{ width: "100%", height: "100%", zIndex:-2 }}
+							style={{ width: "100%", height: "100%", zIndex: -2 }}
 							src={imgmob}
 							alt="img"
 						/>
@@ -142,52 +133,31 @@ const Contact = () => {
 											Оставьте заявку
 										</Text>
 
-										{/* /// */}
+									 
 
-										<MenuRoot {...register("select", { required: true })}>
-											<MenuTrigger
-												fontSize={16}
-												fontWeight={400}
-												w={{ md: 360, base: 310 }}
-												h="50px"
-												padding="0px 20px"
-												borderRadius={{ md: 32, base: 50 }}
-												bg="rgb(221, 224, 224)"
-												border="none"
-												asChild>
-												<Button
-													bg="none"
-													variant="outline"
-													fontSize={14}
-													fontWeight={400}
-													h="100%"
-													border="none"
-													display="flex"
-													justifyContent="space-between">
-													<Text>Тип товара</Text>
-													<Text>
-														<MdOutlineKeyboardArrowDown />
-													</Text>
-												</Button>
-											</MenuTrigger>
-											<MenuContent
-												display="flex"
-												flexDirection="column"
-												gap="10px"
-												position="absolute"
-												mt="-40px"
-												h={20}
-												overflowY="scroll"
-												p={2}>
-												<Box>
-													{data?.map((el, index) => (
-														<MenuItem key={index} value="new-txt">
-															{el.title}
-														</MenuItem>
-													))}
-												</Box>
-											</MenuContent>
-										</MenuRoot>
+										 
+
+										<select
+											{...register("select", { required: true })}
+											style={{
+												fontSize: 16,
+												fontWeight: 400,
+												width: "100%",
+												height: "50px",
+												borderRadius: "50px",
+												backgroundColor: "rgb(221, 224, 224)",
+												border: "none",
+												padding: "0px 20px",
+											}}>
+											<option value="" disabled selected>
+												Тип товара
+											</option>
+											{data?.map((el, index) => (
+												<option key={index} value={el.title}>
+													{el.title}
+												</option>
+											))}
+										</select>
 
 										{/* //// */}
 										<Input
@@ -296,8 +266,7 @@ const Contact = () => {
 					w="100%"
 					h="100%"
 					position="relative"
-					overflow="hidden"
-					>
+					overflow="hidden">
 					<div className="map">
 						<iframe
 							src="/map.html"

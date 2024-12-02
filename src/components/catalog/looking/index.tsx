@@ -1,14 +1,15 @@
 "use client";
 import Title from "@/components/ui/texts/Title";
-import { Box, Button, Flex  } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
 import { useGetCatalogQuery } from "@/redux/api/catalog";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import CardLook from "./card-look";
 import TableLook from "./table-look";
 import { useState } from "react";
 import { Metadata } from "next";
 import { NO_INDEX_PAGE } from "@/constants/seo/seo.constants";
+import { useGetByIdItemQuery, useGetItemQuery } from "@/redux/api/items";
 
 export const metadata: Metadata = {
 	title: "Я ищу",
@@ -17,11 +18,17 @@ export const metadata: Metadata = {
 
 const Looking = () => {
 	const { data } = useGetCatalogQuery();
+	const { data: data_table } = useGetItemQuery();
 	const router = useRouter();
 	const [view, setView] = useState("card");
 
+	const { id } = useParams();
+	const idString = Array.isArray(id) ? id[0] : id;
+	const { data:table_Id } = useGetByIdItemQuery(idString);
+
+
 	return (
-		<Box py={{ md: 28, base: 20 }} >
+		<Box py={{ md: 28, base: 20 }}>
 			<Box className="container">
 				<Flex flexDir="column">
 					<Flex
@@ -40,7 +47,14 @@ const Looking = () => {
 							value={view}
 							onChange={(e) => setView(e.target.value)}>
 							<option value="card">Ассортимент</option>
-							<option value="table">Арматура</option>
+							{/* <option value="table">Арматура</option> */}
+							{data_table?.map((el, index) => (
+							<Box key={index}>
+								<option key={index} value="table">
+									{el.title}
+								</option>
+							</Box>
+						))}
 						</select>
 					</Flex>
 
@@ -90,6 +104,8 @@ const Looking = () => {
 
 					{view === "card" && <CardLook />}
 					{view === "table" && <TableLook />}
+
+					 
 				</Flex>
 			</Box>
 		</Box>

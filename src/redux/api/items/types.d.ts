@@ -1,5 +1,3 @@
- 
-
 namespace ITEMS {
 	type GetItemRes = {
 		id: number;
@@ -13,4 +11,18 @@ namespace ITEMS {
 	};
 
 	type GetItemReq = void;
+
+
+	
+
+	type GetItemByIdRes = {
+		id: number;
+		title: string;
+		fields: Array<{
+			title: string;
+			value: string;
+		}>;
+	};
+
+	type GetItemByIdReq = string | undefined;
 }

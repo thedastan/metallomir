@@ -9,9 +9,11 @@ import img_mobile from "@/assets/images/lookingmobile.png";
 import { GoArrowUpRight } from "react-icons/go";
 import {   useRouter } from "next/navigation";
 import Link from "next/link";
+import { useGetCatalogQuery } from "@/redux/api/catalog";
 
 const Looking = () => {
-	const { card_data } = useCardData();
+	const { data } = useGetCatalogQuery();
+
 	const router = useRouter();
 	return (
 		<Box py={20}>
@@ -26,7 +28,7 @@ const Looking = () => {
 					</Title>
 
 					<Box display={{ md: "flex", base: "none" }} flexWrap="wrap" gap={3}>
-						{card_data.map((el, index) => (
+						{data?.map((el, index) => (
 							<Box
 								key={index}
 								cursor="pointer"
@@ -49,7 +51,7 @@ const Looking = () => {
 						w="100%"
 						overflowX="scroll"
 						display={{ md: "none", base: "flex" }}>
-						{card_data.map((el, index) => (
+						{data?.map((el, index) => (
 							<Box
 								p={1}
 								key={index}
