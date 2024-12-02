@@ -2,8 +2,8 @@ export const PHONE_NUMBER = '+996 (701) 007 005'
 
 export const WHATSAPP_NUMBER = PHONE_NUMBER
 
-export const EMAIL_ADDRESS = 'info@metalltorg.kg'
-export const INSTAGRAM = 'metallo_mir'
+export const EMAIL_ADDRESS = 'info@metallomir.kg'
+export const INSTAGRAM = 'metallo_mir/'
 
 export const LOCATION = 'г. Бишкек, ул. Л. Толстого 19а'
 
@@ -14,9 +14,7 @@ export const WHATSAPP_LINK = `https://wa.me/${PHONE_NUMBER}`
 export const EMAIL_ADDRESS_LINK = `mailto:${EMAIL_ADDRESS}`
 
 export const INSTAGRAM_LINK = `https://instagram.com/${INSTAGRAM}`
-export const FACEBOOK_LINK = `https://www.facebook.com/metalltorg.kg/`
-export const YOUTUBE_LINK = `https://www.youtube.com/`
-export const TIKTOK_LINK = `https://www.tiktok.com/@zero_waste.kgz`
+export const YOUTUBE_LINK = `https://www.youtube.com/watch?v=8XtGHLvrY7Q`
 export const TELEGRAM_LINK = `https://t.me/+996701007005`
 
 

@@ -13,7 +13,7 @@ const CardLookDet = () => {
 	const router = useRouter();
 
 	return (
-		<Box py={8}>
+		<Box py={8} fontFamily="Gilroy">
 			<Box display={{ md: "none", base: "block" }}>
 				<Flex flexDir="column">
 					<Flex

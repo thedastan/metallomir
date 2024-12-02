@@ -17,7 +17,7 @@ const CardDetails = () => {
 	const { data } = useGetCatalogByIdQuery(idString);
 
 	return (
-		<Box w="100%" h="100%">
+		<Box w="100%" h="100%" fontFamily="Gilroy">
 			<Box className="container">
 				{data && (
 					<Box py={10}>

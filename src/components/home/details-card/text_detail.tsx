@@ -11,7 +11,7 @@ const TextDetail = () => {
 
 
 	return (
-		<Box>
+		<Box fontFamily="Gilroy">
 			<Box>
 				{/* {data && (
 					<Box>

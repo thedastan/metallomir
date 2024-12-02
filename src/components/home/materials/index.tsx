@@ -18,7 +18,7 @@ const Materials = () => {
 			<Box className="container">
 				<Box>
 					<Flex justifyContent="space-between" alignItems="end">
-						<Box data-aos="fade-right" w={{ md: "410px", base: "100%" }}>
+						<Box   w={{ md: "410px", base: "100%" }}>
 							<Title
 								fontWeight={400}
 								fontSize={{ md: 36, base: 26 }}
@@ -56,6 +56,7 @@ const Materials = () => {
 						{data?.slice(0, 4).map((el, index) => (
 							<Box
 								key={index}
+								data-aos="fade-up" data-aos-delay={index * 200}
 								cursor="pointer"
 								onClick={() => router.push(`/${el.id}`)}>
 								<Flex

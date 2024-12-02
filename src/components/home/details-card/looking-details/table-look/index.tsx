@@ -8,7 +8,7 @@ const TableLookDet = () => {
 	const { data } = useGetItemQuery();
 
 	return (
-		<Box py={14}>
+		<Box py={14} fontFamily="Gilroy">
 			<Box className="container">
 				<Box borderRadius={{ md: 20, base: 10 }} bg="#313131" p={{ md: 10, base: "30px 10px" }}>
 					<Flex

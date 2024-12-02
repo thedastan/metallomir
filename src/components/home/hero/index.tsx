@@ -62,7 +62,7 @@ const Hero = () => {
 						flexDir="column"
 						gap={6}>
 						<Title
-							data-aos="fade-right"
+							data-aos="fade-up"
 							data-aos-duration="1000"
 							fontFamily="Gilroy"
 							fontWeight={500}
@@ -71,7 +71,7 @@ const Hero = () => {
 							Металлопродукция от лидеров рынка
 						</Title>
 						<Description
-							data-aos="fade-right"
+							data-aos="fade-up"
 							data-aos-duration="1300"
 							fontSize={{ md: 20, base: 18 }}>
 							Широкий ассортимент металлопроката по доступным ценам. Быстрая
@@ -79,7 +79,7 @@ const Hero = () => {
 						</Description>
 
 						<Box
-							data-aos="fade-right"
+							data-aos="fade-up"
 							data-aos-duration="1700"
 							display={{ md: "flex", base: "none" }}
 							p="0 10px "
@@ -93,7 +93,7 @@ const Hero = () => {
 
 						<Link href={"#contact"}>
 							<Button
-								data-aos="fade-right"
+								data-aos="fade-up"
 								data-aos-duration="2000"
 								display={{ md: "flex", base: "none" }}
 								w={220}
@@ -111,7 +111,7 @@ const Hero = () => {
 						</Link>
 					</Flex>
 
-					<Box data-aos="fade-left" position="relative">
+					<Box data-aos="fade-up" position="relative">
 						<Box
 							data-aos-duration="1200"
 							display={{ md: "flex", base: "none" }}>
@@ -153,7 +153,7 @@ const Hero = () => {
 
 					<Box
 						display={{ md: "none", base: "flex" }}
-						data-aos="fade-right"
+						data-aos="fade-up"
 						data-aos-duration="1700"
 						alignItems="start"
 						justifyContent="start"

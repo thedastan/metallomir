@@ -9,6 +9,7 @@ import AboutCompany from './about';
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Box } from '@chakra-ui/react';
 
 
 const AboutCompanyComponents = () => {
@@ -21,13 +22,13 @@ const AboutCompanyComponents = () => {
     });
   }, []);
   return (
-    <div>
+    <Box fontFamily="Gilroy">
       <Hero/>
       <AboutCompany/>
       <Gallery/>
       <Suppliers/>
       <Contact/>
-    </div>
+    </Box>
   );
 };
 

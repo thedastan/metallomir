@@ -23,7 +23,7 @@ const Guarantee = () => {
 					borderRadius={20}>
 					<Box className="container">
 						<Description
-							data-aos="fade-right"
+							data-aos="fade-up"
 							textAlign="start"
 							fontSize={18}
 							color="#b8b8b8">
@@ -31,7 +31,7 @@ const Guarantee = () => {
 						</Description>
 						<Flex justifyContent="space-between" alignItems="end">
 							<Title
-								data-aos="fade-right"
+								data-aos="fade-up"
 								color="white"
 								textAlign="start"
 								fontWeight={500}
@@ -64,7 +64,7 @@ const Guarantee = () => {
 								h={{ md: 345, base: 321 }}
 								overflow="hidden">
 								<Image
-									data-aos="fade-right"
+									data-aos="fade-up"
 									style={{ width: "100%", height: "100%", objectFit: "cover" }}
 									src={gar1}
 									alt="img"
@@ -73,7 +73,7 @@ const Guarantee = () => {
 							<Flex gap={4}>
 								<Box borderRadius={20} w={198} h={345} overflow="hidden">
 									<Image
-										data-aos="fade-right"
+										data-aos="fade-up"
 										style={{
 											width: "100%",
 											height: "100%",
@@ -90,7 +90,7 @@ const Guarantee = () => {
 										h={164}
 										overflow="hidden">
 										<Image
-											data-aos="fade-right"
+											data-aos="fade-up"
 											style={{
 												width: "100%",
 												height: "100%",
@@ -106,7 +106,7 @@ const Guarantee = () => {
 										h={164}
 										overflow="hidden">
 										<Image
-											data-aos="fade-right"
+											data-aos="fade-up"
 											style={{
 												width: "100%",
 												height: "100%",

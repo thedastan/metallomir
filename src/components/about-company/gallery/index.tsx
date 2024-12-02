@@ -62,7 +62,6 @@ const Gallery = () => {
 					<Box className="container">
 						<Title
 							color="white"
-							data-aos="fade-right"
 							textAlign="center"
 							fontWeight={500}
 							fontSize={{ md: 68, base: 28 }}

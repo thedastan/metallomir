@@ -15,17 +15,17 @@ const About = () => {
 				w={{ md: 750, base: "98%" }}
 				textAlign="center">
 				<Title
-					data-aos="fade-right"
+					 
 					fontWeight={500}
 					fontSize={{ md: 68, base: 32 }}>
 					О компании
 				</Title>
 				<Description
-					data-aos="fade-right"
+					 
 					mt={{ md: 12, base: 4 }}
 					fontSize={{ md: 36, base: 24 }}
 					lineHeight={{ md: "38px", base: "27px" }}>
-					`&quot;`МеталлоМир `&quot;` — надежный поставщик металлопроката и металлопродукции в
+					&quot;МеталлоМир&quot; — надежный поставщик металлопроката и металлопродукции в
 					Кыргызстане.
 				</Description>
 			</Flex>

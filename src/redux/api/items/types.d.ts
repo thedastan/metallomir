@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
 namespace ITEMS {
 	type GetItemRes = {

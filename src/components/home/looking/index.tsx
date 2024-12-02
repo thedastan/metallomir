@@ -19,7 +19,7 @@ const Looking = () => {
 				<Flex flexDir="column" gap={{ md: 14, base: 6 }}>
 					<Title
 						p={{ md: 0, base: 4 }}
-						data-aos="fade-right"
+					 
 						fontWeight={500}
 						fontSize={{ md: 68, base: 28 }}>
 						Я ищу...
@@ -75,13 +75,13 @@ const Looking = () => {
 						alignItems="end"
 						justifyContent="end">
 						<Image
-							data-aos="fade-right"
+							data-aos="fade-up"
 							style={{ width: "100%", height: "367px" }}
 							src={img}
 							alt="img"
 						/>
 						<Flex
-							data-aos="fade-left"
+							data-aos="fade-up"
 							justifyContent="end"
 							position="absolute"
 							gap={2}

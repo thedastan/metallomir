@@ -23,7 +23,7 @@ const CardTabs = () => {
 	// }
 
 	return (
-		<Flex>
+		<Flex fontFamily="Gilroy">
 			{data && (
 				<Box
 					borderRadius={10}

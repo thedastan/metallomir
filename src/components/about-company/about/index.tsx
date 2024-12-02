@@ -12,7 +12,6 @@ const AboutCompany = () => {
 				w={{ md: 750, base: "98%" }}
 				textAlign="center">
 				<Description
-					data-aos="fade-right"
 					fontSize={{ md: 36, base: 22 }}
 					lineHeight={{ md: "38px", base: "27px" }}>
 					Наша компания — это не только качественная продукция, но и

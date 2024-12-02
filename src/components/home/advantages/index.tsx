@@ -64,7 +64,7 @@ const Advantages = () => {
 					flexDir={{ md: "row", base: "column" }}
 					justifyContent="space-between"
 					alignItems="center">
-					<Box data-aos="fade-right" w={{ md: 489, base: 345 }}>
+					<Box w={{ md: 489, base: 345 }}>
 						<Title
 							fontWeight={500}
 							fontSize={{ md: 68, base: 32 }}

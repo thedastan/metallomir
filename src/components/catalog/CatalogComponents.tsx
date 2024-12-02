@@ -6,6 +6,7 @@ import Logo from '../home/logo';
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Box } from '@chakra-ui/react';
 
 
  
@@ -18,11 +19,11 @@ const CatalogComponents = () => {
   }, []);
 
   return (
-    <div>
+    <Box fontFamily="Gilroy">
        <Looking/> 
        <Contact/>
        <Logo/>
-    </div>
+    </Box>
   );
 };
 

@@ -1,181 +1,127 @@
-import {
-	Box,
-	DrawerActionTrigger,
-	DrawerBackdrop,
-	DrawerBody,
-	DrawerCloseTrigger,
-	DrawerContent,
-	DrawerRoot,
-	DrawerTrigger,
-	Flex,
-	Text,
-} from "@chakra-ui/react";
+'use client';
+
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 import { PHONE_NUMBER } from "@/constants/admin";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoMdClose } from "react-icons/io";
-
 import { BiLogoTelegram } from "react-icons/bi";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaTiktok } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
-import { FaFacebookF } from "react-icons/fa";
-import {
-	FACEBOOK_LINK,
-	INSTAGRAM_LINK,
-	TELEGRAM_LINK,
-	TIKTOK_LINK,
-	YOUTUBE_LINK,
-} from "@/constants/admin";
+import { INSTAGRAM_LINK, TELEGRAM_LINK, YOUTUBE_LINK } from "@/constants/admin";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+import styles from "./burger.module.scss"; // Импортируем стили
 
 const Header = () => {
-	const pathname = usePathname()
-	const nav = [
-		{
-			name: "Главная",
-			path: "/",
-		},
-		{
-			name: "о компании",
-			path: "/about-company",
-		},
-		{
-			name: "продукции",
-			path: "/catalog",
-		},
-		{
-			name: "контакты",
-			path: "#contact",
-		},
-	];
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const links = [
-		{
-			path: TELEGRAM_LINK,
-			icon: <BiLogoTelegram />,
-		},
-		{
-			path: INSTAGRAM_LINK,
-			icon: <AiFillInstagram />,
-		},
-		{
-			path: TIKTOK_LINK,
-			icon: <FaTiktok />,
-		},
-		{
-			path: YOUTUBE_LINK,
-			icon: <FaYoutube />,
-		},
-		{
-			path: FACEBOOK_LINK,
-			icon: <FaFacebookF />,
-		},
-	];
-	return (
-		<Box p={2}>
-			<Box className="container">
-				<Flex alignItems="center" justifyContent="space-between">
-					{/* ///img/// */}
-					<Box>
-						<Link href={"/"}>
-							<Image width={66} height={36} src={logo} alt="logo" />
-						</Link>
-					</Box>
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-					<Flex gap={40}>
-						<Box display={{ md: "flex", base: "none" }} gap={6}>
-							{nav.map((el, index) => (
-								<Link key={index} href={el.path}>
-									<Text style={{
-									  borderBottom:
-										 	pathname === el.path ? 'solid 1px black' : 'none',
-										padding: '2px'
-									}}>{el.name}</Text>
-								</Link>
-							))}
-						</Box>
+  const nav = [
+    { name: "Главная", path: "/" },
+    { name: "о компании", path: "/about-company" },
+    { name: "продукции", path: "/catalog" },
+    { name: "контакты", path: "#contact" },
+  ];
 
-						<Box display={{ md: "flex", base: "none" }}>
-							<Link href={`tel:${PHONE_NUMBER}`} target={"_blank"}>
-								<Text>{PHONE_NUMBER}</Text>
-							</Link>
-						</Box>
+  const links = [
+    { path: TELEGRAM_LINK, icon: <BiLogoTelegram /> },
+    { path: INSTAGRAM_LINK, icon: <AiFillInstagram /> },
+    { path: YOUTUBE_LINK, icon: <FaYoutube /> },
+  ];
 
-						<Box display={{ md: "none", base: "flex" }}>
-							<DrawerRoot>
-								<DrawerBackdrop />
-								<DrawerTrigger p="0" asChild>
-									<Text border="none" p="0" fontSize={30}>
-										<RxHamburgerMenu />
-									</Text>
-								</DrawerTrigger>
+  return (
+    <Box p={2} fontFamily="Gilroy">
+      <Box className="container">
+        <Flex alignItems="center" justifyContent="space-between">
+          <Box>
+            <Link href={"/"}>
+              <Image width={66} height={36} src={logo} alt="logo" />
+            </Link>
+          </Box>
 
-								<DrawerContent top={0} right={0} position="absolute">
-									<Box display="flex" justifyContent="end" w="100%">
-										<DrawerActionTrigger p={4} asChild>
-											<Text fontSize={30}>
-												<IoMdClose />
-											</Text>
-										</DrawerActionTrigger>
-									</Box>
-									<DrawerBody p={0}>
-										<DrawerActionTrigger asChild>
-											<Flex justifyContent="center" w="100%">
-												<Link href={"/"}>
-													<Image width={66} height={36} src={logo} alt="logo" />
-												</Link>
-											</Flex>
-										</DrawerActionTrigger>
+          <Flex gap={40}>
+            {/* Desktop Navigation */}
+            <Box display={{ md: "flex", base: "none" }} gap={6}>
+              {nav.map((el, index) => (
+                <Link key={index} href={el.path}>
+                  <Text
+                    fontFamily="Gilroy"
+                    fontSize={20}
+                    style={{
+                      borderBottom: pathname === el.path ? "solid 1px black" : "none",
+                      padding: "2px",
+                    }}>
+                    {el.name}
+                  </Text>
+                </Link>
+              ))}
+            </Box>
 
-										<DrawerActionTrigger asChild>
-											<Flex
-												mt={10}
-												alignItems="center"
-												flexDir="column"
-												gap={4}>
-												{nav.map((el, index) => (
-													<Link key={index} href={el.path}>
-														<Text fontSize={18}>{el.name}</Text>
-													</Link>
-												))}
-											</Flex>
-										</DrawerActionTrigger>
+            <Box display={{ md: "flex", base: "none" }}>
+              <Link href={`tel:${PHONE_NUMBER}`} target={"_blank"}>
+                <Text fontSize={20}>{PHONE_NUMBER}</Text>
+              </Link>
+            </Box>
 
-										<DrawerActionTrigger asChild>
-											<Flex
-												mt={4}
-												p="20px 0"
-												w="100%"
-												justifyContent="center"
-												gap={4}>
-												{links.map((el, index) => (
-													<Link key={index} href={el.path} target={"_blank"}>
-														<Text
-															p={2}
-															bg="#434343"
-															border="solid 2px #FFFFFF1F"
-															borderRadius={50}
-															fontSize={20}
-															color="white">
-															{el.icon}
-														</Text>
-													</Link>
-												))}
-											</Flex>
-										</DrawerActionTrigger>
-									</DrawerBody>
-									<DrawerCloseTrigger />
-								</DrawerContent>
-							</DrawerRoot>
-						</Box>
-					</Flex>
-				</Flex>
-			</Box>
-		</Box>
-	);
+            {/* Mobile Hamburger Menu */}
+            <Box position="absolute" ml={-8} mt={-2} zIndex={30} display={{ md: "none", base: "flex" }}>
+              <Box
+                className={`${styles.burger} ${isMenuOpen ? styles.open : ""}`}
+                onClick={toggleMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </Box>
+            </Box>
+          </Flex>
+        </Flex>
+      </Box>
+
+      {/* Mobile Menu Drawer */}
+      <Box
+        position="absolute"
+        top={0}
+        right={isMenuOpen ? 0 : "-100%"}
+        width="100%"
+        height="100%"
+        bg="white"
+        zIndex={20}
+				// mt={10}
+        p={4}
+        transition="right 0.3s ease-in-out">
+         
+
+        <Flex flexDirection="column" ml={6} gap={6} mt={4}>
+          {nav.map((el, index) => (
+            <Link key={index} href={el.path} onClick={toggleMenu}>
+              <Text fontSize={24}>{el.name}</Text>
+            </Link>
+          ))}
+          <Flex gap={4} mt={6}>
+            {links.map((el, index) => (
+              <Link key={index} href={el.path} target={"_blank"}>
+                <Text
+                  p={2}
+                  bg="#434343"
+                  border="solid 2px #FFFFFF1F"
+                  borderRadius={50}
+                  fontSize={20}
+                  color="white">
+                  {el.icon}
+                </Text>
+              </Link>
+            ))}
+          </Flex>
+        </Flex>
+      </Box>
+    </Box>
+  );
 };
 
 export default Header;
