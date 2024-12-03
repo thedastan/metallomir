@@ -8,6 +8,7 @@ import { useGetCatalogByIdQuery } from "@/redux/api/catalog";
 import Contact from "../contact";
 import Logo from "../logo";
 import LookingDetails from "./looking-details";
+import Head from "next/head";
 
 const CardDetails = () => {
 	const { id } = useParams();
@@ -17,7 +18,24 @@ const CardDetails = () => {
 	const { data } = useGetCatalogByIdQuery(idString);
 
 	return (
-		<Box w="100%" h="100%" fontFamily="Gilroy">
+		 <>
+		 <Head>
+		  
+    <meta name="description" content="Купить арматуру A500C в Бишкеке. Высокое качество, доступные цены. Доставка по городу и регионам. Подробности на сайте Metallomir."/>
+    <meta name="keywords" content="арматура A500C Бишкек, купить арматуру Бишкек, металлопрокат Бишкек, арматура цена, арматура доставка Бишкек"/>
+    <meta name="author" content="Metallomir"/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://metallomir.kg/catalog/armatura-a500c"/>
+      {data?.seos.map((el,index) => (
+				 <div key={index}>
+					<title>{el.title}</title>
+					<meta name="title" content={el.title}/>
+					<meta name="description" content={el.description}/>
+
+				 </div>
+			))}
+		 </Head>
+		 <Box w="100%" h="100%" fontFamily="Gilroy">
 			<Box className="container">
 				{data && (
 					<Box py={10}>
@@ -26,6 +44,7 @@ const CardDetails = () => {
 						</Text>
 					</Box>
 				)}
+				 
 				<Flex
 					bg="#F4F4F4"
 					borderRadius={20}
@@ -51,6 +70,7 @@ const CardDetails = () => {
 			<Contact />
 			<Logo />
 		</Box>
+		</>
 	);
 };
 

@@ -10,6 +10,7 @@ import { Metadata } from "next";
 import { NO_INDEX_PAGE } from "@/constants/seo/seo.constants";
 import CardLookDet from "./card-look";
 import TableLookDet from "./table-look";
+import { useGetItemQuery } from "@/redux/api/items";
 
 export const metadata: Metadata = {
 	title: "Похожие",
@@ -18,8 +19,11 @@ export const metadata: Metadata = {
 
 const LookingDetails = () => {
 	const { data } = useGetCatalogQuery();
+	const { data: data_table } = useGetItemQuery();
 	const router = useRouter();
 	const [view, setView] = useState("card");
+
+	const [selectedId, setSelectedId] = useState<string | undefined>();
 
 	return (
 		<Box py={20}>
@@ -38,10 +42,22 @@ const LookingDetails = () => {
 
 						<select
 							className="select_option"
-							value={view}
-							onChange={(e) => setView(e.target.value)}>
+							value={view === "table" ? selectedId : view} // Если "table", используем `id`
+							onChange={(e) => {
+								if (e.target.value === "card" || e.target.value === "table") {
+									setView(e.target.value); // Меняем вид
+								} else {
+									setView("table");
+									setSelectedId(e.target.value); // Устанавливаем выбранный id
+								}
+							}}>
 							<option value="card">Ассортимент</option>
-							<option value="table">Арматура</option>
+							{/* <option value="table">Арматура</option> */}
+							{data_table?.map((el) => (
+								<option key={el.id} value={el.id}>
+									{el.title}
+								</option>
+							))}
 						</select>
 					</Flex>
 
@@ -88,9 +104,12 @@ const LookingDetails = () => {
 							</Box>
 						))}
 					</Box>
-
-					{view === "card" && <CardLookDet />}
-					{view === "table" && <TableLookDet />}
+ 
+					<Box>
+						{/* Логика переключения видов */}
+						{view === "card" && <CardLookDet />}
+						{view === "table" && <TableLookDet id={selectedId} />}
+					</Box>
 				</Flex>
 			</Box>
 		</Box>
