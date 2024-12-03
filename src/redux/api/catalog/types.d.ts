@@ -22,10 +22,10 @@ namespace CATALOG {
 			image: string;
 		}>;
 		infos: Array<{
-			id: number
-			title: string
-			value: string
-		}>
+			id: number;
+			title: string;
+			value: string;
+		}>;
 		seos: Array<{
 			id: number;
 			title: string;
@@ -34,8 +34,15 @@ namespace CATALOG {
 	};
 
 	type GetCatalogByIdReq = string | undefined;
+
+	type PostForgotResponse = {
+		name: string;
+		phone_number: number;
+		message: string;
+	};
+	type PostForgotRequest = {
+		name: string;
+		phone_number: number;
+		message: string;
+	};
 }
-
-
-
- 

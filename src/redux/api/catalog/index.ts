@@ -17,7 +17,16 @@ const api = index.injectEndpoints({
       }),
       providesTags: ["catalog"],
     }),
+
+    forgot: build.mutation<CATALOG.PostForgotResponse, CATALOG.PostForgotRequest>({
+      query: (forgotData) => ({
+        url: "callbacks",
+        method: "POST",
+        body: forgotData,
+      }),
+      invalidatesTags: ["auth"],
+    }),
   }),
 });
 
-export const {  useGetCatalogQuery,useGetCatalogByIdQuery } = api;
+export const {  useGetCatalogQuery,useGetCatalogByIdQuery,useForgotMutation } = api;

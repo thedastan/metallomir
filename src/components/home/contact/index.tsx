@@ -1,11 +1,5 @@
 "use client";
-import {
-	Box,
-	Button,
-	Flex,
-	Input,
-	Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Text, Textarea } from "@chakra-ui/react";
 import img from "@/assets/images/contact.png";
 import imgmob from "@/assets/images/contactmob.png";
 
@@ -22,48 +16,34 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useGetCatalogQuery } from "@/redux/api/catalog";
 
-interface IFormTelegram {
-	number: number | string;
+interface IFormForgotPassword {
 	text: string;
-	phone: number;
-	select: string;
+	phone: string;
+	message: string;
 }
 
 const Contact = () => {
-	const { data } = useGetCatalogQuery();
-
-	const { register, handleSubmit, reset } = useForm<IFormTelegram>();
 	const [phone, setPhone] = useState("");
+	const { register, handleSubmit, reset } = useForm<IFormForgotPassword>();
 
-	const TOKEN = process.env.NEXT_PUBLIC_TG_TOKEN;
-	const CHAT_ID = process.env.NEXT_PUBLIC_TG_CHAT_ID;
+	const onSubmit: SubmitHandler<IFormForgotPassword> = async (data) => {
+		const newData = {
+			name: data.text,
+			phone_number: phone, // Передаем номер телефона из состояния
+			message: data.message,
+		};
 
-	const messageModel = (data: IFormTelegram) => {
-		let messageTG = `Name: <b>${data.text}</b>\n`;
-		messageTG += `Number: <b>${data.number}</b>\n`;
-		messageTG += `Number: <b>${data.phone}</b>\n`;
-		messageTG += `Number: <b>${data.select}</b>\n`;
-		return messageTG;
-	};
-
-	const onSubmit: SubmitHandler<IFormTelegram> = async (data) => {
 		try {
-			await axios.post(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-				chat_id: CHAT_ID,
-				parse_mode: "html",
-				text: messageModel(data),
-			});
-			reset();
-			toast.success("Заявка успешно отправлена!", {
-				position: "top-right",
-				autoClose: 3000,
-			});
-		} catch (err) {
-			console.error("Error occurred:", err);
-			toast.error("Ошибка при отправке сообщения!", {
-				position: "top-right",
-				autoClose: 3000,
-			});
+			const response = await axios.post(
+				"https://metallomir.pythonanywhere.com/api/v1/callbacks/",
+				newData
+			);
+			console.log("Response:", response.data);
+			alert("Сообщение успешно отправлено!");
+			reset(); // Очистка формы после успешной отправки
+		} catch (error) {
+			console.error("Ошибка отправки сообщения:", error);
+			alert("Произошла ошибка при отправке сообщения. Попробуйте снова.");
 		}
 	};
 
@@ -90,15 +70,15 @@ const Contact = () => {
 					alignItems="end">
 					<Box display={{ md: "flex", base: "none" }} w="100%" h={550}>
 						<Image
-							style={{ width: "100%", height: "100%", zIndex: -2 }}
+							style={{ width: "100%", height: "100%", zIndex: -4 }}
 							src={img}
 							alt="img"
 						/>
 					</Box>
 
-					<Box display={{ md: "none", base: "flex" }} w="100%" h="100%">
+					<Box display={{ md: "none", base: "flex" }} w="100%" h="600px">
 						<Image
-							style={{ width: "100%", height: "100%", zIndex: -2 }}
+							style={{ width: "100%", height: "100%", zIndex: -4 }}
 							src={imgmob}
 							alt="img"
 						/>
@@ -119,10 +99,11 @@ const Contact = () => {
 									border="solid 1px white"
 									backdropFilter="blur(10px)"
 									bg="#9494944d"
-									mt={5}
+									mt={4}
 									gap={6}
 									w={{ md: 500, base: "100%" }}
-									py={4}
+									py={8}
+									zIndex={10}
 									alignItems="center">
 									<Flex justifyContent="center" flexDirection="column" gap={5}>
 										<Text
@@ -133,33 +114,6 @@ const Contact = () => {
 											Оставьте заявку
 										</Text>
 
-									 
-
-										 
-
-										<select
-											{...register("select", { required: true })}
-											style={{
-												fontSize: 16,
-												fontWeight: 400,
-												width: "100%",
-												height: "50px",
-												borderRadius: "50px",
-												backgroundColor: "rgb(221, 224, 224)",
-												border: "none",
-												padding: "0px 20px",
-											}}>
-											<option value="" disabled selected>
-												Тип товара
-											</option>
-											{data?.map((el, index) => (
-												<option key={index} value={el.title}>
-													{el.title}
-												</option>
-											))}
-										</select>
-
-										{/* //// */}
 										<Input
 											fontSize={16}
 											fontWeight={400}
@@ -170,22 +124,8 @@ const Contact = () => {
 											bg="rgb(221, 224, 224)"
 											border="none"
 											type="text"
-											placeholder="Район поставки"
-											{...register("text", { required: true })}
-										/>
-
-										<Input
-											fontSize={16}
-											fontWeight={400}
-											w={{ md: 360, base: 310 }}
-											h="50px"
-											padding="10px 20px"
-											borderRadius={{ md: 32, base: 50 }}
-											bg="rgb(221, 224, 224)"
-											border="none"
-											type="number"
-											placeholder="Количество товара"
-											{...register("number", { required: true })}
+											placeholder="Имя"
+											{...register("text", { required: "Имя обязательно" })}
 										/>
 
 										<PhoneInput
@@ -195,6 +135,22 @@ const Contact = () => {
 											value={phone}
 											onChange={(phone) => setPhone(phone)}
 										/>
+
+										<Textarea
+											fontSize={16}
+											fontWeight={400}
+											w={{ md: 360, base: 310 }}
+											h="130px"
+											mt={-3}
+											padding="10px 20px"
+											borderRadius={{ md: 22, base: 20 }}
+											bg="rgb(221, 224, 224)"
+											border="none"
+											placeholder="Сообщение"
+											{...register("message", {
+												required: "Сообщение обязательно",
+											})}
+										/>
 									</Flex>
 								</Flex>
 								<Flex
@@ -203,7 +159,7 @@ const Contact = () => {
 									gap={3}>
 									<Button
 										type="submit"
-										zIndex={-1}
+										zIndex={0}
 										border="solid 1px white"
 										mt={{ base: -2, md: 3 }}
 										w={{ md: 440, base: "80%" }}
@@ -215,7 +171,7 @@ const Contact = () => {
 									</Button>
 									<Button
 										type="submit"
-										zIndex={-1}
+										zIndex={0}
 										border="solid 1px white"
 										mt={{ base: -2, md: 3 }}
 										w={{ md: "56px", base: "50px" }}

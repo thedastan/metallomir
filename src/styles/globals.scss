@@ -20,6 +20,7 @@
 		border-top-right-radius: 32px !important;
 		border-bottom-right-radius: 32px !important;
 		overflow: hidden;
+		position: relative;
 	}
 
 	@media (max-width: 500px) {
@@ -288,7 +289,6 @@
 		border-radius: 10px;
 		overflow: hidden; // Убирает скролл
 		border: none; //
-		
 
 		@media (max-width: 500px) {
 			height: 253.5px;
@@ -296,4 +296,3 @@
 		}
 	}
 }
-
