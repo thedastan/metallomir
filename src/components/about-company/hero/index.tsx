@@ -1,35 +1,14 @@
 "use client";
 import Description from "@/components/ui/Description";
 import Title from "@/components/ui/texts/Title";
-import { NO_INDEX_PAGE } from "@/constants/seo/seo.constants";
+ 
 import { Box, Flex } from "@chakra-ui/react";
-import { Metadata } from "next";
-import Head from "next/head";
-
-
-export const metadata: Metadata = {
-	title: "О компании - Металлопрокат в Бишкеке",
-	...NO_INDEX_PAGE,
-};
-
+ 
+ 
 const Hero = () => {
 	return (
 		<>
-			<Head>
-				<meta name="title" content="О компании - Металлопрокат в Бишкеке" />
-				<meta
-					name="description"
-					content="Узнайте больше о нашей компании. Мы занимаемся поставкой качественного металлопроката в Бишкеке: арматура, трубы, уголки, швеллер и другие изделия. Надежный партнер с опытом."
-				/>
-				<meta
-					name="keywords"
-					content="О компании, металлопрокат Бишкек, арматура, трубы, уголки, швеллер, доставка металла Бишкек, надежный поставщик металла"
-				/>
-				<meta name="author" content="Название вашей компании" />
-				<meta name="robots" content="index, follow" />
-				<title>О компании - Металлопрокат в Бишкеке</title>
-				<link rel="canonical" href="https://metallomir.kg/about-company" />
-			</Head>
+			 
 
 			<Box p={{ md: "70px 0 0 0", base: "50px  0 0 0" }}>
 				<Box className="container2">

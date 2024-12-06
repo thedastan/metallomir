@@ -3,20 +3,14 @@ import Title from "@/components/ui/texts/Title";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
 import { useGetCatalogQuery } from "@/redux/api/catalog";
-import { useParams, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import CardLook from "./card-look";
 import TableLook from "./table-look";
 import { useState } from "react";
-import { Metadata } from "next";
-import { NO_INDEX_PAGE } from "@/constants/seo/seo.constants";
-import { useGetByIdItemQuery, useGetItemQuery } from "@/redux/api/items";
-import Head from "next/head";
-
-export const metadata: Metadata = {
-	title: "Каталог металлопроката в Бишкеке - Metallomir",
-	...NO_INDEX_PAGE,
-};
-
+ 
+import { useGetItemQuery } from "@/redux/api/items";
+ 
+ 
 const Looking = () => {
 	const { data } = useGetCatalogQuery();
 	const { data: data_table } = useGetItemQuery();
@@ -27,17 +21,7 @@ const Looking = () => {
 
 	return (
 		<>
-		<Head>
-		<meta name="title" content="Каталог металлопроката в Бишкеке - Арматура, Трубы, Листы и Другое"/>
-    <meta name="description" content="Каталог металлопроката в Бишкеке от Metallomir. Арматура, трубы (круглые и прямоугольные), оцинкованные листы, уголки, швеллер и катанка. Ознакомьтесь с ассортиментом на сайте."/>
-    <meta name="keywords" content="каталог металлопрокат Бишкек, арматура Бишкек, трубы Бишкек, оцинкованные листы Бишкек, швеллер Бишкек, катанка Бишкек, купить металлопрокат Бишкек, Metallomir каталог"/>
-    <meta name="author" content="Metallomir"/>
-    <meta name="robots" content="index, follow"/>
-    <link rel="canonical" href="https://metallomir.kg/catalog"/>
-    <title>Каталог металлопроката в Бишкеке - Metallomir</title>
-		</Head>
-
-
+		 
 			<Box py={{ md: 28, base: 20 }}>
 				<Box className="container">
 					<Flex flexDir="column">

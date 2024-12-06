@@ -13,10 +13,10 @@ import Logo from './logo';
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+ 
 
 const HomeComponents = () => {
-
+  
 
 	useEffect(() => {
     AOS.init({
@@ -26,7 +26,9 @@ const HomeComponents = () => {
   }, []);
 
   return (
-    <Box fontFamily="Gilroy">
+    <>
+    
+     <Box fontFamily="Gilroy">
       <Hero/>
       <Materials/>
       <About/>
@@ -37,6 +39,7 @@ const HomeComponents = () => {
       <Contact/>
       <Logo/>
     </Box>
+    </>
   );
 };
 

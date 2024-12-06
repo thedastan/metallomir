@@ -53,7 +53,7 @@ const Header = () => {
                   <Text
                     fontFamily="Gilroy"
                     textTransform="uppercase"
-                    fontSize={18}
+                    fontSize={16}
                     style={{
                       borderBottom: pathname === el.path ? "solid 1px black" : "none",
                       padding: "2px",

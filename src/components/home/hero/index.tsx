@@ -9,40 +9,12 @@ import { GoArrowUpRight } from "react-icons/go";
 
 import { MdMarkEmailUnread } from "react-icons/md";
 import Link from "next/link";
-import { Metadata } from "next";
-import { NO_INDEX_PAGE } from "@/constants/seo/seo.constants";
-import Head from "next/head";
-
-export const metadata: Metadata = {
-	title: "Металлопрокат в Бишкеке - Арматура, Трубы, Листы и Другое",
-	...NO_INDEX_PAGE,
-};
-
+ 
 const Hero = () => {
+	 
 	return (
 		<>
-		
-			<Head>
-				<meta
-					name="title"
-					content="Металлопрокат в Бишкеке - Арматура, Трубы, Листы и Другое"
-				/>
-				<meta
-					name="description"
-					content="Металлопрокат в Бишкеке. Широкий ассортимент: арматура, оцинкованные листы, круглые и прямоугольные трубы, уголки, швеллер, катанка. Доставка по городу. Звоните!"
-				/>
-				<meta
-					name="keywords"
-					content="Металлопрокат, Бишкек, арматура, оцинкованные листы, трубы круглые, трубы прямоугольные, уголки, швеллер, катанка, доставка металлопроката Бишкек, купить металл Бишкек"
-				/>
-				<meta name="robots" content="index, follow" />
-				<title>Металлопрокат в Бишкеке - Арматура, Трубы, Листы и Другое</title>
-				<link rel="canonical" href="https://metallomir.kg/"/> 
-				<meta name="author" content="ОсОО Металломир"/>
-			</Head>
-
-
-
+			 
 
 			<Box
 				py={20}

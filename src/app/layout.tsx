@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
-import { SITE_NAME } from "@/constants/seo/seo.constants";
+import { SEO_DESCRIPTION, SITE_NAME } from "@/constants/seo/seo.constants";
 import Providers from "./provider";
 import { gilroy } from "@/constants/fonts/fonts";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 		template: `%s | ${SITE_NAME}`,
 	},
 	description:
-		'"Metallomir" — надежный поставщик металлопроката и металлопродукции в Кыргызстане.',
+	SEO_DESCRIPTION
 };
 
 export default function RootLayout({

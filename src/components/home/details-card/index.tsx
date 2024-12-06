@@ -19,26 +19,11 @@ const CardDetails = () => {
 
 	return (
 		 <>
-		 <Head>
-		  
-    <meta name="description" content="Купить арматуру A500C в Бишкеке. Высокое качество, доступные цены. Доставка по городу и регионам. Подробности на сайте Metallomir."/>
-    <meta name="keywords" content="арматура A500C Бишкек, купить арматуру Бишкек, металлопрокат Бишкек, арматура цена, арматура доставка Бишкек"/>
-    <meta name="author" content="Metallomir"/>
-    <meta name="robots" content="index, follow"/>
-    <link rel="canonical" href="https://metallomir.kg/catalog/armatura-a500c"/>
-      {data?.seos.map((el,index) => (
-				 <div key={index}>
-					<title>{el.title}</title>
-					<meta name="title" content={el.title}/>
-					<meta name="description" content={el.description}/>
-
-				 </div>
-			))}
-		 </Head>
-		 <Box w="100%" h="100%" fontFamily="Gilroy">
+		 
+		 <Box w="100%" py={10} h="100%" fontFamily="Gilroy">
 			<Box className="container">
 				{data && (
-					<Box py={10}>
+					<Box py={10} p={{ md: 0, base: 4 }}>
 						<Text fontSize={{ md: 70, base: 26 }} fontWeight={500}>
 							{data.title}
 						</Text>

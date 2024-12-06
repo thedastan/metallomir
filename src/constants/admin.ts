@@ -1,4 +1,6 @@
 export const PHONE_NUMBER = '+996 (701) 007 005'
+export const PHONE_NUMBER_WHATSAPP = '+996701007005'
+
 
 export const WHATSAPP_NUMBER = PHONE_NUMBER
 
@@ -9,7 +11,7 @@ export const LOCATION = 'г. Бишкек, ул. Л. Толстого 19а'
 
 /// links
 
-export const WHATSAPP_LINK = `https://wa.me/${PHONE_NUMBER}`
+export const WHATSAPP_LINK = `https://wa.me/${PHONE_NUMBER_WHATSAPP}`
 
 export const EMAIL_ADDRESS_LINK = `mailto:${EMAIL_ADDRESS}`
 
