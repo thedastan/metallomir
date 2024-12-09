@@ -7,6 +7,7 @@ import {
 import { THEME_COLOR } from "@/config/_variables.config";
 
 const Head = () => {
+	
 	const meta_name = [
 		{
 			name: "theme-color",
