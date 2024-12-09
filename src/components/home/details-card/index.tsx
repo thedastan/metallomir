@@ -30,7 +30,7 @@ const CardDetails = () => {
 				{data && (
 					<Box py={10} p={{ md: 0, base: 4 }}>
 						<Text fontSize={{ md: 70, base: 26 }} fontWeight={500}>
-							{data.title}
+						{data.title} в Бишкеке
 						</Text>
 					</Box>
 				)}

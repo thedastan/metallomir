@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
-import { SEO_DESCRIPTION, SITE_NAME } from "@/constants/seo/seo.constants";
+import {
+	SEO_DESCRIPTION,
+	SITE_NAME,
+	SEO_IMAGE,
+} from "@/constants/seo/seo.constants";
 import Providers from "./provider";
 import { gilroy } from "@/constants/fonts/fonts";
 
@@ -9,8 +13,11 @@ export const metadata: Metadata = {
 		default: SITE_NAME,
 		template: `%s | ${SITE_NAME}`,
 	},
-	description:
-	SEO_DESCRIPTION
+	description: SEO_DESCRIPTION,
+
+	openGraph: {
+		url: SEO_IMAGE,
+	},
 };
 
 export default function RootLayout({
