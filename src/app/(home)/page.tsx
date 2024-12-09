@@ -31,7 +31,7 @@ const Home = () => {
 
 				<meta
 					property="og:image"
-					content="http://localhost:3003/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.f55e7955.png&w=750&q=75"
+					content="https://kzmc.kg/media/uploads/images/listovoi_prokat1.jpg"
 				/>
 
 				<meta property="og:type" content="website" />
