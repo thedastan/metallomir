@@ -47,13 +47,9 @@ const Looking = () => {
 										setSelectedId(e.target.value); // Устанавливаем выбранный id
 									}
 								}}>
-								<option value="card">Ассортимент</option>
-								{/* <option value="table">Арматура</option> */}
-								{data_table?.map((el) => (
-									<option key={el.id} value={el.id}>
-										{el.title}
-									</option>
-								))}
+								<option value="card">Продукты</option>
+								<option value="table">Таблицы</option>
+								 
 							</select>
 						</Flex>
 
@@ -104,7 +100,7 @@ const Looking = () => {
 						<Box>
 							{/* Логика переключения видов */}
 							{view === "card" && <CardLook />}
-							{view === "table" && <TableLook id={selectedId} />}
+							{view === "table" && <TableLook   />}
 						</Box>
 					</Flex>
 				</Box>

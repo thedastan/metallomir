@@ -9,13 +9,12 @@ import { GoArrowUpRight } from "react-icons/go";
 
 import { MdMarkEmailUnread } from "react-icons/md";
 import Link from "next/link";
- 
+
+import img from "@/assets/images/homefigure.png";
+
 const Hero = () => {
-	 
 	return (
 		<>
-			 
-
 			<Box
 				py={20}
 				p={{ md: "50px 0 0 0", base: "50px 14px 14px 14px" }}
@@ -30,7 +29,6 @@ const Hero = () => {
 					left="0"
 					right="0"
 					zIndex="0">
-					{/* First Line */}
 					<Box
 						position="absolute"
 						top="0"
@@ -41,7 +39,6 @@ const Hero = () => {
 						filter="blur(20px)"
 						transform="skewX(-40deg)"
 					/>
-					{/* Second Line */}
 					<Box
 						position="absolute"
 						top="0"
@@ -114,31 +111,82 @@ const Hero = () => {
 							</Link>
 						</Flex>
 
-						<Box data-aos="fade-up" position="relative">
+						<Box w="100%" data-aos="fade-up" position="relative">
 							<Box
 								data-aos-duration="1200"
 								display={{ md: "flex", base: "none" }}>
-								<Image width={700} height={710} src={homeimg} alt="homeimg" />
+								<Box
+									position="relative"
+									w="580px"
+									h="580px"
+									borderRadius={20}
+									overflow="hidden">
+									<video
+										autoPlay
+										loop
+										muted
+										style={{
+											position: "absolute",
+											top: 0,
+											left: 0,
+											width: "100%",
+											height: "100%",
+											objectFit: "cover",
+											zIndex: -1,
+										}}>
+										<source src="/metal.mp4" type="video/mp4" />
+									</video>
+								</Box>
 							</Box>
 
 							<Box
 								data-aos="zoom-in"
 								data-aos-duration="1700"
+								w="100%"
 								display={{ md: "none", base: "flex" }}>
-								<Image
-									width={700}
-									height={710}
-									src={homeimgMob}
-									alt="homeimg"
-								/>
+								<Box
+									position="relative"
+									w="100%"
+									h="300px"
+									borderRadius={20}
+									overflow="hidden">
+									<video
+										autoPlay
+										loop
+										muted
+										style={{
+											position: "absolute",
+											top: 0,
+											left: 0,
+											width: "100%",
+											height: "100%",
+											objectFit: "cover",
+											zIndex: -1,
+										}}>
+										<source src="/metal.mp4" type="video/mp4" />
+									</video>
+								</Box>
 							</Box>
 
 							<Flex
 								position="absolute"
+								// p={6}
+								borderRadius="10px"
 								gap={{ md: 2, base: 1 }}
-								mt={{ md: -14, base: -10 }}>
-								<Link href={"/catalog"}>
+								mt={{ md: "-120px", base: "-87px" }}
+								ml="-28px">
+							 
+								<Box p="0"   position="absolute" w={{ md:400, base: 360 }} h={{ md:"140px", base: "100px" }}>
+									<Image
+										style={{ width: "100%", height: "100%" }}
+										src={img}
+										alt="img"
+									/>
+								</Box>
+								 <Flex ml={{ md:14, base: 10 }} gap={2} mt={{ md:14, base: 10 }}   position="absolute">
+								 <Link href={"/catalog"}>
 									<Button
+										// position="absolute"
 										fontSize="14px"
 										w={{ md: 210, base: 190 }}
 										h={{ md: "54px", base: "46px" }}
@@ -149,6 +197,7 @@ const Hero = () => {
 								</Link>
 								<Link href={"/catalog"}>
 									<Button
+										// position="absolute"
 										w={{ md: "54px", base: "46px" }}
 										h={{ md: "54px", base: "46px" }}
 										borderRadius={50}
@@ -156,6 +205,7 @@ const Hero = () => {
 										<GoArrowUpRight />
 									</Button>
 								</Link>
+								 </Flex>
 							</Flex>
 						</Box>
 
@@ -176,6 +226,20 @@ const Hero = () => {
 					</Flex>
 				</Box>
 			</Box>
+
+			{/* <Box className="asims">
+			  <div className="box">
+				<div className="asim1"></div>
+			  <div className="asim2"></div>
+			  <div className="asim3"></div>
+				</div>
+			  <div className="asimbox"></div>
+			  <div className="asimbox2"></div>
+			  <div className="asimbox3"></div>
+
+
+
+			</Box> */}
 		</>
 	);
 };

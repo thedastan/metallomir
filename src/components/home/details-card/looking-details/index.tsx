@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const LookingDetails = () => {
 	const { data } = useGetCatalogQuery();
-	const { data: data_table } = useGetItemQuery();
+	// const { data: data_table } = useGetItemQuery();
 	const router = useRouter();
 	const [view, setView] = useState("card");
 
@@ -51,13 +51,13 @@ const LookingDetails = () => {
 									setSelectedId(e.target.value); // Устанавливаем выбранный id
 								}
 							}}>
-							<option value="card">Ассортимент</option>
-							{/* <option value="table">Арматура</option> */}
-							{data_table?.map((el) => (
+							<option value="card">Продукты</option>
+							<option value="table">Таблицы</option>
+							{/* {data_table?.map((el) => (
 								<option key={el.id} value={el.id}>
 									{el.title}
 								</option>
-							))}
+							))} */}
 						</select>
 					</Flex>
 
@@ -108,7 +108,7 @@ const LookingDetails = () => {
 					<Box>
 						{/* Логика переключения видов */}
 						{view === "card" && <CardLookDet />}
-						{view === "table" && <TableLookDet id={selectedId} />}
+						{view === "table" && <TableLookDet />}
 					</Box>
 				</Flex>
 			</Box>
