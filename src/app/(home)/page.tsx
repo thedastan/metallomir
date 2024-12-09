@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 	description:
 		"Металлопрокат в Бишкеке. Широкий ассортимент: арматура, оцинкованные листы, круглые и прямоугольные трубы, уголки, швеллер, катанка. Доставка по городу. Звоните!",
 
-		url: "http://localhost:3003/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.f55e7955.png&w=750&q=75",
+		url: "https://kzmc.kg/media/uploads/images/listovoi_prokat1.jpg",
 		type: "website",
 	},
 };
