@@ -1,16 +1,19 @@
 import React from "react";
+import axios from "axios";
 import CardDetails from "@/components/home/details-card";
 
-// Function to fetch catalog data
+// Интерфейс для параметров маршрута
+interface Params {
+  id: string;
+}
+
+// Функция для получения данных каталога
 async function fetchCatalogData(id: string) {
   try {
-    const response = await fetch(`https://metallomir.pythonanywhere.com/api/v1/catalog/${id}`, {
-      cache: "no-store", // Disables caching
-    });
-    const data = await response.json();
+    const response = await axios.get(`https://metallomir.pythonanywhere.com/api/v1/catalog/${id}`);
     return {
-      title: data?.title || "ОсОО Металломир",
-      description: data?.description || "Описание каталога недоступно",
+      title: response.data?.title || "ОсОО Металломир",
+      description: response.data?.description || "Описание каталога недоступно",
     };
   } catch (error) {
     console.error("Error fetching catalog data:", error);
@@ -21,28 +24,21 @@ async function fetchCatalogData(id: string) {
   }
 }
 
-// Generate metadata for the dynamic route
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const { id } = params;
+// Генерация метаданных для динамического маршрута
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params; // Ожидаем промис для получения параметров
   const { title, description } = await fetchCatalogData(id);
-
+  
   return {
-    title: title,
-    description: description,
+    title,
+    description,
     robots: "index, follow",
     authors: [{ name: title }],
   };
 }
 
 const PageIdCard = () => {
-
-
-
-  return (
-    <div>
-      <CardDetails   />
-    </div>
-  );
+  return <CardDetails />;
 };
 
 export default PageIdCard;
