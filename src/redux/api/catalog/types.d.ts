@@ -18,6 +18,7 @@ namespace CATALOG {
 		description: string;
 		image: string;
 		price_file: null;
+		slug:string;
 		images: Array<{
 			id: number;
 			image: string;

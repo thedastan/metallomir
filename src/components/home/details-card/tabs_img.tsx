@@ -20,8 +20,8 @@ const CardTabs = () => {
 				<Box w={{ md: "560px", base: "100%" }}>
 					{/* Main Image */}
 					<Box
-						w={{ md: "560px", base: "100%" }}
-						h="335px"
+						w={{ md: "550px", base: "100%" }}
+						h="375px"
 						borderRadius="md"
 						overflow="hidden"
 						position="relative"

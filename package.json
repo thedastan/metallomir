@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^3.2.1",
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
+    "@fancyapps/ui": "^5.0.36",
     "@radix-ui/react-tabs": "^1.1.1",
     "@reduxjs/toolkit": "^2.4.0",
     "@types/react-slick": "^0.23.13",
@@ -35,7 +36,8 @@
     "scss": "^0.2.4",
     "slick-carousel": "^1.8.1",
     "sonner": "^1.7.0",
-    "swiper": "^11.1.15"
+    "swiper": "^11.1.15",
+    "ui": "link:@types/@fancyapps/ui"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",

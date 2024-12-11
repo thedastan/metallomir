@@ -13,11 +13,15 @@ import axios from "axios";
  
  
 const CardDetails = () => {
-	const { slug } = useParams();
+	const { id } = useParams();
 
-	const idString = Array.isArray(slug) ? slug[0] : slug;
+	const idString = Array.isArray(id) ? id[0] : id;
 
 	const { data } = useGetCatalogByIdQuery(idString);
+
+	console.log(data,"sssssssssss");
+
+ 
  
  
 	return (
@@ -27,6 +31,7 @@ const CardDetails = () => {
 		 
 		 <Box w="100%" py={10} h="100%" fontFamily="Gilroy">
 			<Box className="container">
+				 
 				{data && (
 					<Box py={10} p={{ md: 0, base: 4 }}>
 						<Text fontSize={{ md: 70, base: 26 }} fontWeight={500}>

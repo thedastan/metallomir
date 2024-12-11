@@ -7,11 +7,17 @@ import gar3 from "@/assets/images/gal1.png";
 import gar4 from "@/assets/images/gal2.png";
 import gar5 from "@/assets/images/gar5.png";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+
+import { Fancybox } from "@fancyapps/ui";
+// import "@fancyapps/ui/dist/fancybox.css";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+
 
 const Gallery = () => {
 	const imagesSlider = [gar1, gar2, gar3, gar4, gar5];
@@ -23,21 +29,7 @@ const Gallery = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		// appendDots: (dots: React.ReactNode) => (
-		// 	<Box mt={4}>
-		// 		<ul
-		// 			style={{
-		// 				display: "flex",
-		// 				justifyContent: "center",
-		// 				gap: "10px",
-		// 				padding: 0,
-		// 				margin: 0,
-		// 				listStyle: "none",
-		// 			}}>
-		// 			{dots}
-		// 		</ul>
-		// 	</Box>
-		// ),
+		 
 		customPaging: () => (
 			<Box
 				mt={3}
@@ -49,6 +41,21 @@ const Gallery = () => {
 			/>
 		),
 	};
+ 
+	useEffect(() => {
+    // Инициализация Fancybox
+    Fancybox.bind("[data-fancybox='gallery']", {
+      // Другие параметры для Fancybox
+    });
+
+    return () => {
+      // Очистка Fancybox при размонтировании компонента
+      Fancybox.destroy();
+    };
+  }, []);
+
+
+	
 
 	return (
 		<Box fontFamily="Gilroy" pb={20}>
@@ -97,88 +104,104 @@ const Gallery = () => {
 							</Slider>
 						</Box>
 
+						 
 						<Box display={{ base: "none", md: "flex" }} flexDir="column">
-							<Flex gap={4} mt={10} justifyContent="space-between">
-								<Box
-									borderRadius={20}
-									w={{ md: 412, base: "100%" }}
-									h={{ md: 330, base: 321 }}
-									overflow="hidden">
-									<Image
-										style={{
-											width: "100%",
-											height: "100%",
-											objectFit: "cover",
-										}}
-										src={gar3}
-										alt="img"
-									/>
-								</Box>
-								<Box
-									borderRadius={20}
-									w={{ md: 412, base: "100%" }}
-									h={{ md: 330, base: 321 }}
-									overflow="hidden">
-									<Image
-										style={{
-											width: "100%",
-											height: "100%",
-											objectFit: "cover",
-										}}
-										src={gar5}
-										alt="img"
-									/>
-								</Box>
-								<Box
-									borderRadius={20}
-									w={{ md: 412, base: "100%" }}
-									h={{ md: 330, base: 321 }}
-									overflow="hidden">
-									<Image
-										style={{
-											width: "100%",
-											height: "100%",
-											objectFit: "cover",
-										}}
-										src={gar4}
-										alt="img"
-									/>
-								</Box>
-							</Flex>
+              <Flex gap={4} mt={10} justifyContent="space-between">
+                <Box
+                  borderRadius={20}
+                  w={{ md: 412, base: "100%" }}
+                  h={{ md: 330, base: 321 }}
+                  overflow="hidden"
+                >
+                  <a data-fancybox="gallery" href={gar3.src}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={gar3}
+                      alt="img"
+                    />
+                  </a>
+                </Box>
+                <Box
+                  borderRadius={20}
+                  w={{ md: 412, base: "100%" }}
+                  h={{ md: 330, base: 321 }}
+                  overflow="hidden"
+                >
+                  <a data-fancybox="gallery" href={gar5.src}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={gar5}
+                      alt="img"
+                    />
+                  </a>
+                </Box>
+                <Box
+                  borderRadius={20}
+                  w={{ md: 412, base: "100%" }}
+                  h={{ md: 330, base: 321 }}
+                  overflow="hidden"
+                >
+                  <a data-fancybox="gallery" href={gar4.src}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={gar4}
+                      alt="img"
+                    />
+                  </a>
+                </Box>
+              </Flex>
 
-							<Flex gap={4} mt={6} justifyContent="space-between">
-								<Box
-									borderRadius={20}
-									w={{ md: 846, base: "100%" }}
-									h={{ md: 330, base: 321 }}
-									overflow="hidden">
-									<Image
-										style={{
-											width: "100%",
-											height: "100%",
-											objectFit: "cover",
-										}}
-										src={gar1}
-										alt="img"
-									/>
-								</Box>
-								<Box
-									borderRadius={20}
-									w={{ md: 412, base: "100%" }}
-									h={{ md: 330, base: 321 }}
-									overflow="hidden">
-									<Image
-										style={{
-											width: "100%",
-											height: "100%",
-											objectFit: "cover",
-										}}
-										src={gar2}
-										alt="img"
-									/>
-								</Box>
-							</Flex>
-						</Box>
+              <Flex gap={4} mt={6} justifyContent="space-between">
+                <Box
+                  borderRadius={20}
+                  w={{ md: 846, base: "100%" }}
+                  h={{ md: 330, base: 321 }}
+                  overflow="hidden"
+                >
+                  <a data-fancybox="gallery" href={gar1.src}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={gar1}
+                      alt="img"
+                    />
+                  </a>
+                </Box>
+                <Box
+                  borderRadius={20}
+                  w={{ md: 412, base: "100%" }}
+                  h={{ md: 330, base: 321 }}
+                  overflow="hidden"
+                >
+                  <a data-fancybox="gallery" href={gar2.src}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={gar2}
+                      alt="img"
+                    />
+                  </a>
+                </Box>
+              </Flex>
+            </Box>
 					</Box>
 				</Box>
 			</Box>
@@ -187,3 +210,8 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+
+
+
+ 
