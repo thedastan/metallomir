@@ -39,7 +39,7 @@ const Header = () => {
 		<Box
 			w="100%"
 			bg="white"
-			// position="fixed"
+			position="fixed"
 			zIndex={1000}
 			p={2}
 			fontFamily="Gilroy">
