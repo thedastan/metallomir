@@ -10,11 +10,14 @@ import "react-international-phone/style.css";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import { useState } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+ 
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useGetCatalogQuery } from "@/redux/api/catalog";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 interface IFormForgotPassword {
 	text: string;
@@ -39,11 +42,11 @@ const Contact = () => {
 				newData
 			);
 			console.log("Response:", response.data);
-			alert("Сообщение успешно отправлено!");
+			toast.success("Сообщение успешно отправлено!");
 			reset(); // Очистка формы после успешной отправки
 		} catch (error) {
 			console.error("Ошибка отправки сообщения:", error);
-			alert("Произошла ошибка при отправке сообщения. Попробуйте снова.");
+			toast.error("Произошла ошибка при отправке сообщения. Попробуйте снова.");
 		}
 	};
 
@@ -232,6 +235,7 @@ const Contact = () => {
 					</div>
 				</Box>
 			</Box>
+			<ToastContainer position="top-right" autoClose={5000} />
 		</Box>
 	);
 };

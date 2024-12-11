@@ -29,7 +29,7 @@ const CardLookDet = () => {
 								cursor="pointer"
 								w={{ md: 306, base: "170px" }}
 								h="100%"
-								onClick={() => router.push(`/${el.id}`)}>
+								onClick={() => router.push(`/${el.slug}`)}>
 								<Flex
 									flexDir="column"
 									justifyContent="end"
@@ -104,7 +104,7 @@ const CardLookDet = () => {
 						key={index}
 						cursor="pointer"
 						pb={6}
-						onClick={() => router.push(`/${el.id}`)}>
+						onClick={() => router.push(`/${el.slug}`)}>
 						<Flex
 							flexDir="column"
 							justifyContent="end"

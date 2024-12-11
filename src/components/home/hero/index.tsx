@@ -5,12 +5,13 @@ import Image from "next/image";
 import homeimg from "@/assets/images/hero.png";
 import homeimgMob from "@/assets/images/home_mobile.png";
 
-import { GoArrowUpRight } from "react-icons/go";
+import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
 
 import { MdMarkEmailUnread } from "react-icons/md";
 import Link from "next/link";
 
 import img from "@/assets/images/homefigure.png";
+import { PRICE_LIST } from "@/constants/admin";
 
 const Hero = () => {
 	return (
@@ -91,7 +92,8 @@ const Hero = () => {
 								<Description fontSize={16}>Торговли</Description>
 							</Box>
 
-							<Link href={"#contact"}>
+							 <Flex gap={6}>
+							 <Link href={"#contact"}>
 								<Button
 									data-aos="fade-up"
 									data-aos-duration="2000"
@@ -109,6 +111,28 @@ const Hero = () => {
 									<Text>Оставить заявку</Text>
 								</Button>
 							</Link>
+
+							<Link href={PRICE_LIST} target={"_blank"}>
+								<Button
+									data-aos="fade-up"
+									data-aos-duration="2000"
+									display={{ md: "flex", base: "none" }}
+									w={220}
+									h="56px"
+									borderRadius={50}
+									color="black"
+									p={4}
+									border="solid 1px black"
+									bg="none">
+									 
+									<Text>Скачать Прайс-Лист</Text>
+
+									<Text>
+									<GoArrowRight />
+									</Text>
+								</Button>
+							</Link>
+							 </Flex>
 						</Flex>
 
 						<Box w="100%" data-aos="fade-up" position="relative">
@@ -223,23 +247,32 @@ const Hero = () => {
 							<Description fontSize={16}>Производства</Description>
 							<Description fontSize={16}>Торговли</Description>
 						</Box>
+
+						<Link href={PRICE_LIST} target={"_blank"}>
+								<Button
+									data-aos="fade-up"
+									data-aos-duration="2000"
+									display={{ md: "none", base: "flex" }}
+									w={220}
+									h="56px"
+									borderRadius={50}
+									color="black"
+									p={4}
+									border="solid 1px black"
+									bg="none">
+									 
+									<Text>Скачать Прайс-Лист</Text>
+
+									<Text>
+									<GoArrowRight />
+									</Text>
+								</Button>
+							</Link>
 					</Flex>
 				</Box>
 			</Box>
 
-			{/* <Box className="asims">
-			  <div className="box">
-				<div className="asim1"></div>
-			  <div className="asim2"></div>
-			  <div className="asim3"></div>
-				</div>
-			  <div className="asimbox"></div>
-			  <div className="asimbox2"></div>
-			  <div className="asimbox3"></div>
-
-
-
-			</Box> */}
+			 
 		</>
 	);
 };

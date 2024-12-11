@@ -11,8 +11,8 @@ const api = index.injectEndpoints({
       providesTags: ["catalog"],
     }),
     getCatalogById: build.query<CATALOG.GetCatalogByIdRes,CATALOG.GetCatalogByIdReq>({
-      query: (id) => ({
-        url: `catalog/${id}`,
+      query: (slag) => ({
+        url: `catalog/${slag}`,
         method: "GET",
       }),
       providesTags: ["catalog"],

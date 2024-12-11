@@ -1,5 +1,4 @@
 "use client";
-import { useCardData } from "@/components/data";
 import Title from "@/components/ui/texts/Title";
 import { Box, Button, Flex } from "@chakra-ui/react";
 import Image from "next/image";
@@ -32,7 +31,7 @@ const Looking = () => {
 							<Box
 								key={index}
 								cursor="pointer"
-								onClick={() => router.push(`/${el.id}`)}>
+								onClick={() => router.push(`/${el.slug}`)}>
 								<Button
 									color="black"
 									fontWeight={400}
@@ -56,7 +55,7 @@ const Looking = () => {
 								p={1}
 								key={index}
 								cursor="pointer"
-								onClick={() => router.push(`/${el.id}`)}>
+								onClick={() => router.push(`/${el.slug}`)}>
 								<Button
 									color="black"
 									fontWeight={400}

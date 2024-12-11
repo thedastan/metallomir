@@ -58,7 +58,7 @@ const Materials = () => {
 								key={index}
 								data-aos="fade-up" data-aos-delay={index * 200}
 								cursor="pointer"
-								onClick={() => router.push(`/${el.id}`)}>
+								onClick={() => router.push(`/${el.slug}`)}>
 								<Flex
 									flexDir="column"
 									justifyContent="end"

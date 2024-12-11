@@ -66,7 +66,7 @@ const LookingDetails = () => {
 							<Box
 								key={index}
 								cursor="pointer"
-								onClick={() => router.push(`/${el.id}`)}>
+								onClick={() => router.push(`/${el.slug}`)}>
 								<Button
 									color="black"
 									fontWeight={400}
@@ -90,7 +90,7 @@ const LookingDetails = () => {
 								p={1}
 								key={index}
 								cursor="pointer"
-								onClick={() => router.push(`/${el.id}`)}>
+								onClick={() => router.push(`/${el.slug}`)}>
 								<Button
 									color="black"
 									fontWeight={400}

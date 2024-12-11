@@ -13,9 +13,9 @@ import axios from "axios";
  
  
 const CardDetails = () => {
-	const { id } = useParams();
+	const { slug } = useParams();
 
-	const idString = Array.isArray(id) ? id[0] : id;
+	const idString = Array.isArray(slug) ? slug[0] : slug;
 
 	const { data } = useGetCatalogByIdQuery(idString);
  
