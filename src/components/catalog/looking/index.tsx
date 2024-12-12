@@ -13,7 +13,7 @@ import { useGetItemQuery } from "@/redux/api/items";
  
 const Looking = () => {
 	const { data } = useGetCatalogQuery();
-	const { data: data_table } = useGetItemQuery();
+	// const { data: data_table } = useGetItemQuery();
 	const router = useRouter();
 	const [view, setView] = useState("card");
 
@@ -36,7 +36,7 @@ const Looking = () => {
 								Я ищу...
 							</Title>
 
-							<select
+							{/* <select
 								className="select_option"
 								value={view === "table" ? selectedId : view} // Если "table", используем `id`
 								onChange={(e) => {
@@ -50,7 +50,7 @@ const Looking = () => {
 								<option value="card">Продукты</option>
 								<option value="table">Таблицы</option>
 								 
-							</select>
+							</select> */}
 						</Flex>
 
 						<Box display={{ md: "flex", base: "none" }} flexWrap="wrap" gap={3}>
@@ -99,8 +99,10 @@ const Looking = () => {
 
 						<Box>
 							{/* Логика переключения видов */}
-							{view === "card" && <CardLook />}
-							{view === "table" && <TableLook   />}
+							{/* {view === "card" && <CardLook />}
+							{view === "table" && <TableLook   />} */}
+							{/* <TableLook   /> */}
+							<CardLook />
 						</Box>
 					</Flex>
 				</Box>

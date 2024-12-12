@@ -93,7 +93,7 @@ const Hero = () => {
 							</Box>
 
 							 <Flex gap={6}>
-							 <Link href={"#contact"}>
+							 <Link href={"/table"}>
 								<Button
 									data-aos="fade-up"
 									data-aos-duration="2000"
@@ -105,10 +105,11 @@ const Hero = () => {
 									p={4}
 									border="solid 1px black"
 									bg="none">
+										<Text>Ассортименты</Text>
 									<Text>
-										<MdMarkEmailUnread />
+									<GoArrowRight />
 									</Text>
-									<Text>Оставить заявку</Text>
+									 
 								</Button>
 							</Link>
 

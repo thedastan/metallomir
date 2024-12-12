@@ -40,7 +40,7 @@ const LookingDetails = () => {
 						Похожие
 						</Title>
 
-						<select
+						{/* <select
 							className="select_option"
 							value={view === "table" ? selectedId : view} // Если "table", используем `id`
 							onChange={(e) => {
@@ -53,12 +53,8 @@ const LookingDetails = () => {
 							}}>
 							<option value="card">Продукты</option>
 							<option value="table">Таблицы</option>
-							{/* {data_table?.map((el) => (
-								<option key={el.id} value={el.id}>
-									{el.title}
-								</option>
-							))} */}
-						</select>
+							 
+						</select> */}
 					</Flex>
 
 					<Box display={{ md: "flex", base: "none" }} flexWrap="wrap" gap={3}>
@@ -107,8 +103,9 @@ const LookingDetails = () => {
  
 					<Box>
 						{/* Логика переключения видов */}
-						{view === "card" && <CardLookDet />}
-						{view === "table" && <TableLookDet />}
+						{/* {view === "card" && <CardLookDet />}
+						{view === "table" && <TableLookDet />} */}
+						<CardLookDet />
 					</Box>
 				</Flex>
 			</Box>
