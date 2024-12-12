@@ -92,48 +92,46 @@ const Hero = () => {
 								<Description fontSize={16}>Торговли</Description>
 							</Box>
 
-							 <Flex gap={6}>
-							 <Link href={"/table"}>
-								<Button
-									data-aos="fade-up"
-									data-aos-duration="2000"
-									display={{ md: "flex", base: "none" }}
-									w={220}
-									h="56px"
-									borderRadius={50}
-									color="black"
-									p={4}
-									border="solid 1px black"
-									bg="none">
+							<Flex gap={6}>
+								<Link href={"/table"}>
+									<Button
+										data-aos="fade-up"
+										data-aos-duration="2000"
+										display={{ md: "flex", base: "none" }}
+										w={220}
+										h="56px"
+										borderRadius={50}
+										color="black"
+										p={4}
+										border="solid 1px black"
+										bg="none">
 										<Text>Ассортименты</Text>
-									<Text>
-									<GoArrowRight />
-									</Text>
-									 
-								</Button>
-							</Link>
+										<Text>
+											<GoArrowRight />
+										</Text>
+									</Button>
+								</Link>
 
-							<Link href={PRICE_LIST} target={"_blank"}>
-								<Button
-									data-aos="fade-up"
-									data-aos-duration="2000"
-									display={{ md: "flex", base: "none" }}
-									w={220}
-									h="56px"
-									borderRadius={50}
-									color="black"
-									p={4}
-									border="solid 1px black"
-									bg="none">
-									 
-									<Text>Скачать Прайс-Лист</Text>
+								<Link href={PRICE_LIST} target={"_blank"}>
+									<Button
+										data-aos="fade-up"
+										data-aos-duration="2000"
+										display={{ md: "flex", base: "none" }}
+										w={220}
+										h="56px"
+										borderRadius={50}
+										color="black"
+										p={4}
+										border="solid 1px black"
+										bg="none">
+										<Text>Скачать Прайс-Лист</Text>
 
-									<Text>
-									<GoArrowRight />
-									</Text>
-								</Button>
-							</Link>
-							 </Flex>
+										<Text>
+											<GoArrowRight />
+										</Text>
+									</Button>
+								</Link>
+							</Flex>
 						</Flex>
 
 						<Box w="100%" data-aos="fade-up" position="relative">
@@ -200,37 +198,44 @@ const Hero = () => {
 								gap={{ md: 2, base: 1 }}
 								mt={{ md: "-120px", base: "-87px" }}
 								ml="-28px">
-							 
-								<Box p="0"   position="absolute" w={{ md:400, base: 360 }} h={{ md:"140px", base: "100px" }}>
+								<Box
+									p="0"
+									position="absolute"
+									w={{ md: 400, base: 360 }}
+									h={{ md: "140px", base: "100px" }}>
 									<Image
 										style={{ width: "100%", height: "100%" }}
 										src={img}
 										alt="img"
 									/>
 								</Box>
-								 <Flex ml={{ md:14, base: 10 }} gap={2} mt={{ md:14, base: 10 }}   position="absolute">
-								 <Link href={"/catalog"}>
-									<Button
-										// position="absolute"
-										fontSize="14px"
-										w={{ md: 210, base: 190 }}
-										h={{ md: "54px", base: "46px" }}
-										borderRadius={50}
-										color="white">
-										Каталог продукций
-									</Button>
-								</Link>
-								<Link href={"/catalog"}>
-									<Button
-										// position="absolute"
-										w={{ md: "54px", base: "46px" }}
-										h={{ md: "54px", base: "46px" }}
-										borderRadius={50}
-										color="white">
-										<GoArrowUpRight />
-									</Button>
-								</Link>
-								 </Flex>
+								<Flex
+									ml={{ md: 14, base: 10 }}
+									gap={2}
+									mt={{ md: 14, base: 10 }}
+									position="absolute">
+									<Link href={"/catalog"}>
+										<Button
+											// position="absolute"
+											fontSize="14px"
+											w={{ md: 210, base: 190 }}
+											h={{ md: "54px", base: "46px" }}
+											borderRadius={50}
+											color="white">
+											Каталог продукций
+										</Button>
+									</Link>
+									<Link href={"/catalog"}>
+										<Button
+											// position="absolute"
+											w={{ md: "54px", base: "46px" }}
+											h={{ md: "54px", base: "46px" }}
+											borderRadius={50}
+											color="white">
+											<GoArrowUpRight />
+										</Button>
+									</Link>
+								</Flex>
 							</Flex>
 						</Box>
 
@@ -249,31 +254,48 @@ const Hero = () => {
 							<Description fontSize={16}>Торговли</Description>
 						</Box>
 
-						<Link href={PRICE_LIST} target={"_blank"}>
-								<Button
-									data-aos="fade-up"
-									data-aos-duration="2000"
-									display={{ md: "none", base: "flex" }}
-									w={220}
-									h="56px"
-									borderRadius={50}
-									color="black"
-									p={4}
-									border="solid 1px black"
-									bg="none">
-									 
-									<Text>Скачать Прайс-Лист</Text>
+						 <Flex w="100%" flexDir="column" gap={6}>
+						 <Link href={PRICE_LIST} target={"_blank"}>
+							<Button
+								data-aos="fade-up"
+								data-aos-duration="2000"
+								display={{ md: "none", base: "flex" }}
+								w="100%"
+								h="56px"
+								borderRadius={50}
+								color="black"
+								p={4}
+								border="solid 1px black"
+								bg="none">
+								<Text>Скачать Прайс-Лист</Text>
 
-									<Text>
+								<Text>
 									<GoArrowRight />
-									</Text>
-								</Button>
-							</Link>
+								</Text>
+							</Button>
+						</Link>
+						<Link href={"/table"}>
+							<Button
+								data-aos="fade-up"
+								data-aos-duration="2000"
+								display={{ md: "none", base: "flex" }}
+								w="100%"
+								h="56px"
+								borderRadius={50}
+								color="black"
+								p={4}
+								border="solid 1px black"
+								bg="none">
+								<Text>Ассортименты</Text>
+								<Text>
+									<GoArrowRight />
+								</Text>
+							</Button>
+						</Link>
+						 </Flex>
 					</Flex>
 				</Box>
 			</Box>
-
-			 
 		</>
 	);
 };
