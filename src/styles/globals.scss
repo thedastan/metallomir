@@ -297,88 +297,49 @@
 	}
 }
 
+.footer_contact {
+	.footer_contact_text {
+		border-bottom: solid 2px rgba(0, 0, 0, 0);
+		line-height: 28px;
+		transition: 0.1s;
+	}
+	&:hover {
+		.footer_contact_text {
+			border-bottom: solid 2px black;
+			transition: 0.1s;
+		}
+	}
+}
 
-// .asims {
-// 	// background: red;
-// 	height: 100vh;
-// 	padding: 200px;
-// 	display: flex;	
-// 			background-image: url("https://img.freepik.com/premium-vector/transparent-photoshop-background-transparent-grid_631632-29.jpg");
+.footer_contact_text {
+	border-bottom: solid 2px rgba(0, 0, 0, 0);
+	line-height: 28px;
+	transition: 0.1s;
+	&:hover {
+		border-bottom: solid 2px black;
+		transition: 0.1s;
+	}
+}
 
 
+.footer_contact_text2 {
+	border-bottom: solid 2px rgba(0, 0, 0, 0);
+	line-height: 28px;
+	transition: 0.1s;
+	&:hover {
+		border-bottom: solid 2px black;
+		transition: 0.1s;
+	}
+}
+
+
+.footer_contact_text3 {
+	border-bottom: solid 2px rgba(0, 0, 0, 0);
+	line-height: 28px;
+	transition: 0.1s;
+	&:hover {
+		border-bottom: solid 2px black;
+		transition: 0.1s;
+	}
+}
  
-// 	 .box{
-// 		position: absolute;
-// 		flex-wrap: wrap-reverse;
-// 		margin-top: 260px;
-// 		z-index: 10;
-// 		margin-left: 0px;
-// 		.asim1{
-// 			width: 100px;
-// 			height: 80px;
-// 			background: red;
-// 			border-radius: 0px 40px 0px 60px;
-// 			// margin-top: 300px;
-// 			margin-left: 0px;
-// 			background-image: url("https://img.freepik.com/premium-vector/transparent-photoshop-background-transparent-grid_631632-29.jpg");
-
-
-			
-// 		}
-// 		.asim2{
-// 			width: 400px;
-// 			height: 80px;
-// 			background: #ECF0F4;
-// 			border-radius: 0px 40px 0px 40px;
-// 			// margin-top: 200px;
-// 			margin-left: 100px;
-
-	
-// 		}
-// 		.asim3{
-// 			width: 100px;
-// 			height: 80px;
-// 			background: red;
-// 			border-radius: 0px 30px 0px 60px;
-// 			margin-left: 500px;
-// 			background-image: url("https://img.freepik.com/premium-vector/transparent-photoshop-background-transparent-grid_631632-29.jpg");
-
-	
-// 		}
-// 	 }
-// 	.asimbox{
-// 		width: 550px;
-// 		height: 80px;
-// 		background: #ECF0F4;
-// 		margin-top: 420px;
-// 		// margin-left: 40px;
-// 		position: absolute;
-// 		// clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
-
-// 	}
-
-// 	.asimbox2{
-// 		position: absolute;
-
-// 		width: 150px;
-// 		height: 80px;
-// 		background: #ECF0F4;
-// 		margin-top: 340px;
-// 		// margin-left: 450px;
-// 		// clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
-
-// 	}
-
-// 	.asimbox3{
-// 		position: absolute;
-
-// 		width: 50px;
-// 		height: 80px;
-// 		background: #ECF0F4;
-// 		margin-top: 260px;
-// 		// margin-left: 550px;
-// 		// clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
-
-// 	}
-
-// }

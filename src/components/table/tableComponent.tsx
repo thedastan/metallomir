@@ -1,12 +1,13 @@
 import React from 'react';
 import TableLookDet from './table-look';
 import Tabletitle from './table-look/tabletitle';
+import { Box } from '@chakra-ui/react';
 
 const TableSection = () => {
   return (
-    <div>
+    <Box fontFamily="Gilroy">
       <TableLookDet/>
-    </div>
+    </Box>
   );
 };
 

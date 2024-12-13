@@ -14,9 +14,10 @@ const TableLookDet = () => {
 	if (!data) return <Text>Загрузка...</Text>;
 
 	return (
-		<Box py={{ md: 28, base: 20 }}>
+		<Box fontFamily="Gilroy" py={{ md: 28, base: 20 }}>
 			<Box className="container">
 				<Title
+				fontFamily="Gilroy"
 					fontWeight={500}
 					py={{ md: 10, base: 0 }}
 					p={{ md: 0, base: "20px 10px" }}
