@@ -5,7 +5,6 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import Tabletitle from "../table-look/tabletitle";
-import TableCategory from "./tablecategory";
 
 const TableDetails = () => {
 	const { id } = useParams();
@@ -15,12 +14,13 @@ const TableDetails = () => {
 	const { data } = useGetByIdItemQuery(idString);
 
 	return (
-		<Box h="100vh" py={{ md: 28, base: 20 }} >
+		<Box fontFamily="Gilroy" h="100vh" py={{ md: 28, base: 20 }} >
 			<Box className="container">
       <Title
 					fontWeight={500}
 				 
 					p={{ md: 0, base: "20px 10px" }}
+					fontFamily="Gilroy"
 					fontSize={{ md: 68, base: 28 }}>
 					 {data?.title}
 				</Title>
@@ -28,7 +28,7 @@ const TableDetails = () => {
 
 				{/* /// */}
 
-				 <TableCategory/>
+				 <Tabletitle/>
 
 				{/* /// */}
 
@@ -44,7 +44,7 @@ const TableDetails = () => {
 							{data?.fields.map((item, index) => (
 								<React.Fragment key={index}>
 									<Box p={1} w="100%" textAlign="center">
-										<Text fontSize={{ md: 20, base: 18 }} fontWeight={400}>
+										<Text fontSize={{ md: 20, base: 18 }} fontFamily="Gilroy" fontWeight={400}>
 											{item.title}
 										</Text>
 									</Box>
@@ -70,7 +70,8 @@ const TableDetails = () => {
 										color="white"
 										mt={4}
 										w="100%"
-										textAlign="center">
+										textAlign="center"
+										fontFamily="Gilroy">
 										{data?.title}
 									</Title>
 								</Flex>
@@ -91,7 +92,7 @@ const TableDetails = () => {
 											bg="#3f3f3f"
 											color="white">
 											<Box w="100%" textAlign="center">
-												<Text fontSize={{ md: 20, base: 18 }} fontWeight={400}>
+												<Text fontFamily="Gilroy" fontSize={{ md: 20, base: 18 }} fontWeight={400}>
 													{el.value}
 												</Text>
 											</Box>

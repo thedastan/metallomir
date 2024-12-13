@@ -5,19 +5,13 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useGetCatalogQuery } from "@/redux/api/catalog";
 import {  useRouter } from "next/navigation";
 import CardLook from "./card-look";
-import TableLook from "./table-look";
-import { useState } from "react";
  
-import { useGetItemQuery } from "@/redux/api/items";
  
  
 const Looking = () => {
 	const { data } = useGetCatalogQuery();
-	// const { data: data_table } = useGetItemQuery();
 	const router = useRouter();
-	const [view, setView] = useState("card");
 
-	const [selectedId, setSelectedId] = useState<string | undefined>();
 
 	return (
 		<>
@@ -36,21 +30,7 @@ const Looking = () => {
 								Я ищу...
 							</Title>
 
-							{/* <select
-								className="select_option"
-								value={view === "table" ? selectedId : view} // Если "table", используем `id`
-								onChange={(e) => {
-									if (e.target.value === "card" || e.target.value === "table") {
-										setView(e.target.value); // Меняем вид
-									} else {
-										setView("table");
-										setSelectedId(e.target.value); // Устанавливаем выбранный id
-									}
-								}}>
-								<option value="card">Продукты</option>
-								<option value="table">Таблицы</option>
-								 
-							</select> */}
+							 
 						</Flex>
 
 						<Box display={{ md: "flex", base: "none" }} flexWrap="wrap" gap={3}>
@@ -98,10 +78,7 @@ const Looking = () => {
 						</Box>
 
 						<Box>
-							{/* Логика переключения видов */}
-							{/* {view === "card" && <CardLook />}
-							{view === "table" && <TableLook   />} */}
-							{/* <TableLook   /> */}
+						 
 							<CardLook />
 						</Box>
 					</Flex>

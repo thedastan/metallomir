@@ -58,13 +58,43 @@ const Advantages = () => {
 		},
 	];
 	return (
-		<Box py={20} p={{ md: 0, base: 4 }}>
+		<Box
+			bg="#ECF0F4"
+			py={20}
+			p={{ md: "40px 0", base: 4 }}
+			position="relative"
+			w="100%"
+			h="100%">
+			<Box position="absolute" top="0" bottom="0" left="0" right="0" zIndex="0">
+				<Box
+					position="absolute"
+					top="0"
+					bottom="0"
+					left={{ md: "25%", base: "-85%" }}
+					width="100px"
+					bg={{ md:"linear-gradient(135deg, transparent, rgb(255, 255, 255) 50%, transparent)", base: "linear-gradient(135deg, transparent, rgb(255, 255, 255) 10%, transparent)" }}
+					filter="blur(20px)"
+					transform="skewX(-40deg)"
+
+					
+				/>
+				<Box
+					position="absolute"
+					top="0"
+					bottom="0"
+					right={{ md:"45%", base: "55%" }}
+					width="100px"
+					bg="linear-gradient(-135deg, transparent, rgb(255, 255, 255) 60%, transparent)"
+					filter="blur(20px)"
+					transform="skewX(-40deg)"
+				/>
+			</Box>
 			<Box className="container">
 				<Flex
 					flexDir={{ md: "row", base: "column" }}
 					justifyContent="space-between"
 					alignItems="center">
-					<Box w={{ md: 489, base: 345 }}>
+					<Box zIndex={10} w={{ md: 489, base: 345 }}>
 						<Title
 							fontWeight={500}
 							fontSize={{ md: 68, base: 32 }}
@@ -80,7 +110,7 @@ const Advantages = () => {
 							строить, создавать и воплощать в жизнь проекты наших клиентов.
 						</Description>
 					</Box>
-					<Box display={{ md: "flex", base: "none" }} flexDirection="column">
+					<Box zIndex={10} display={{ md: "flex", base: "none" }} flexDirection="column">
 						<Flex flexDir={{ md: "row", base: "column" }} gap={3} mt={3}>
 							{data.slice(0, 2).map((el, index) => (
 								<Flex
@@ -128,7 +158,7 @@ const Advantages = () => {
 								</Flex>
 							))}
 						</Flex>
-						<Flex flexDir={{ md: "row", base: "column" }} gap={3} mt={3}>
+						<Flex zIndex={10} flexDir={{ md: "row", base: "column" }} gap={3} mt={3}>
 							{data.slice(2, 4).map((el, index) => (
 								<Flex
 									key={index}
@@ -177,7 +207,7 @@ const Advantages = () => {
 						</Flex>
 					</Box>
 
-					<Box display={{ md: "none", base: "flex" }} flexDirection="column">
+					<Box zIndex={10} display={{ md: "none", base: "flex" }} flexDirection="column">
 						<Flex flexDir={{ md: "row", base: "column" }} gap={3} mt={10}>
 							{data2.map((el, index) => (
 								<Flex

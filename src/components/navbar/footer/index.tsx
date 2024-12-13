@@ -15,21 +15,21 @@ import { FaYoutube } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
 
 const Footer = () => {
-	const links = [
-		{
-			path: TELEGRAM_LINK,
-			icon: <BiLogoTelegram />,
-		},
-		{
-			path: INSTAGRAM_LINK,
-			icon: <AiFillInstagram />,
-		},
+	// const links = [
+	// 	{
+	// 		path: TELEGRAM_LINK,
+	// 		icon: <BiLogoTelegram />,
+	// 	},
+	// 	{
+	// 		path: INSTAGRAM_LINK,
+	// 		icon: <AiFillInstagram />,
+	// 	},
 
-		{
-			path: YOUTUBE_LINK,
-			icon: <FaYoutube />,
-		},
-	];
+	// 	{
+	// 		path: YOUTUBE_LINK,
+	// 		icon: <FaYoutube />,
+	// 	},
+	// ];
 	return (
 		<Box bg="#000000" p={{ md: 4, base: "40px 0" }} fontFamily="Gilroy">
 			<Link href={WHATSAPP_LINK} target="_blank">
@@ -92,7 +92,7 @@ const Footer = () => {
 					flexDirection={{ md: "row", base: "column" }}
 					alignItems="center"
 					justifyContent="space-between">
-					<Flex flexDirection={{ md: "row", base: "column" }}  gap={4} alignItems="center">
+					{/* <Flex flexDirection={{ md: "row", base: "column" }}  gap={4} alignItems="center">
 						 <Flex gap={4}>
 						 {links.map((el, index) => (
 							<Link key={index} href={el.path} target={"_blank"}>
@@ -111,10 +111,12 @@ const Footer = () => {
 						<Link href={EMAIL_ADDRESS_LINK}>
 							<Text color="grey">info@metallomir.kg</Text>
 						</Link>
-					</Flex>
+					</Flex> */}
 					<Flex
+					w="100%"
 						mt={{ md: 0, base: 6 }}
 						alignItems="center"
+						justifyContent="space-between"
 						flexDirection={{ md: "row", base: "column" }}
 						gap={{ md: 20, base: 4 }}>
 						<Text fontSize={14} fontWeight={400} color="grey">

@@ -204,6 +204,7 @@
 
 			// background: #00000065;
 			background: #01021b;
+			// background: #dadada;
 		}
 	}
 }
@@ -321,7 +322,6 @@
 	}
 }
 
-
 .footer_contact_text2 {
 	border-bottom: solid 2px rgba(0, 0, 0, 0);
 	line-height: 28px;
@@ -332,7 +332,6 @@
 	}
 }
 
-
 .footer_contact_text3 {
 	border-bottom: solid 2px rgba(0, 0, 0, 0);
 	line-height: 28px;
@@ -342,4 +341,63 @@
 		transition: 0.1s;
 	}
 }
- 
+
+.asim {
+	background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20231205/pngtree-transparent-bottom-grid-mockup-background-image_15495041.jpg");
+
+	.block {
+		margin-left: 200px;
+		margin-top: 100px;
+		position: absolute;
+		background:"linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.7) 10%, transparent)";
+		background: rgb(255, 255, 255);
+		.box1 {
+			width: 60px;
+			height: 40px;
+			background: red;
+			background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20231205/pngtree-transparent-bottom-grid-mockup-background-image_15495041.jpg");
+
+			border-radius: 0px 0 50px 0;
+			margin-left: 300px;
+		}
+		.box2 {
+			width: 240px;
+			height: 60px;
+			background: white;
+			border-radius: 30px 0 30px 0;
+			margin-left: 60px;
+		}
+		.box3 {
+			width: 60px;
+			height: 40px;
+			background: red;
+			background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20231205/pngtree-transparent-bottom-grid-mockup-background-image_15495041.jpg");
+			border-radius: 0px 0 50px 0;
+		}
+	}
+
+	.block2 {
+		margin-left: 200px;
+		margin-top: 100px;
+		.box1 {
+			width: 60px;
+			height: 40px;
+			background: white;
+			border-radius: 0px 0 00px 0;
+			margin-left: 300px;
+		}
+		.box2 {
+			width: 300px;
+			height: 60px;
+			background: white;
+			border-radius: 30px 0 0px 0;
+			margin-left: 60px;
+		}
+		.box3 {
+			width: 360px;
+			height: 40px;
+			background: white;
+			border-radius: 60px 0 0px 0;
+		}
+	}
+}

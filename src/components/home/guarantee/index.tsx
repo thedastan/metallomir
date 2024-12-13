@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const Guarantee = () => {
 	return (
-		<Box fontFamily="Gilroy" pb={20}>
+		<Box 	bg="#ECF0F4" fontFamily="Gilroy" pb={20} >
 			<Box className="container2">
 				<Box
 					data-aos="fade-up"

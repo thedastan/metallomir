@@ -2,9 +2,7 @@ import Description from "@/components/ui/Description";
 import Title from "@/components/ui/texts/Title";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import homeimg from "@/assets/images/hero.png";
-import homeimgMob from "@/assets/images/home_mobile.png";
-
+ 
 import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
 
 import { MdMarkEmailUnread } from "react-icons/md";
@@ -34,9 +32,10 @@ const Hero = () => {
 						position="absolute"
 						top="0"
 						bottom="0"
-						left="25%"
+					  left={{ md: "25%", base: "-65%" }}
 						width="100px"
-						bg="linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.7) 10%, transparent)"
+						bg={{ md:"linear-gradient(135deg, transparent, rgb(255, 255, 255) 50%, transparent)", base: "linear-gradient(135deg, transparent, rgb(255, 255, 255) 10%, transparent)" }}
+
 						filter="blur(20px)"
 						transform="skewX(-40deg)"
 					/>
@@ -44,9 +43,10 @@ const Hero = () => {
 						position="absolute"
 						top="0"
 						bottom="0"
-						right="45%"
+						right={{ md: "55%", base: "65%" }}
 						width="100px"
-						bg="linear-gradient(-135deg, transparent, rgba(255, 255, 255, 0.7) 10%, transparent)"
+						bg={{ md:"linear-gradient(135deg, transparent, rgb(255, 255, 255) 60%, transparent)", base: "linear-gradient(135deg, transparent, rgb(255, 255, 255) 10%, transparent)" }}
+
 						filter="blur(20px)"
 						transform="skewX(-40deg)"
 					/>

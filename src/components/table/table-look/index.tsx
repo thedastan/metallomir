@@ -21,7 +21,7 @@ const TableLookDet = () => {
 					fontWeight={500}
 					py={{ md: 10, base: 0 }}
 					p={{ md: 0, base: "20px 10px" }}
-					fontSize={{ md: 68, base: 28 }}>
+					fontSize={{ md: 68, base: 28 }} >
 					Ассортимент
 				</Title>
 
@@ -44,7 +44,7 @@ const TableLookDet = () => {
 								{el.fields.map((item, index) => (
 									<React.Fragment key={index}>
 										<Box w="100%" textAlign="center">
-											<Text fontSize={{ md: 20, base: 18 }} fontWeight={400}>
+											<Text fontFamily="Gilroy" fontSize={{ md: 20, base: 18 }} fontWeight={400}>
 												{item.title}
 											</Text>
 										</Box>
@@ -65,6 +65,7 @@ const TableLookDet = () => {
 										bg="#313131"
 										color="white">
 										<Title
+										fontFamily="Gilroy"
 											fontSize={{ md: 22, base: 18 }}
 											fontWeight={600}
 											color="white"
@@ -93,7 +94,7 @@ const TableLookDet = () => {
 												<Box w="100%" textAlign="center">
 													<Text
 														fontSize={{ md: 20, base: 18 }}
-														fontWeight={400}>
+														fontWeight={400} fontFamily="Gilroy">
 														{el.value}
 													</Text>
 												</Box>

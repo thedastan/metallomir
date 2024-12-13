@@ -2,25 +2,27 @@
 import Title from "@/components/ui/texts/Title";
 import { Box, Button, Flex } from "@chakra-ui/react";
 import Image from "next/image";
-import img from "@/assets/images/looking.png";
+import img from "@/assets/images/lookingnew.png";
 import img_mobile from "@/assets/images/lookingmobile.png";
 
 import { GoArrowUpRight } from "react-icons/go";
-import {   useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useGetCatalogQuery } from "@/redux/api/catalog";
+
+import imgbtn from "@/assets/images/asim.png";
 
 const Looking = () => {
 	const { data } = useGetCatalogQuery();
 
 	const router = useRouter();
 	return (
-		<Box py={20}>
+	 
+		<Box 	data-aos="fade-up"  py={20}  >
 			<Box className="container">
 				<Flex flexDir="column" gap={{ md: 14, base: 6 }}>
 					<Title
 						p={{ md: 0, base: 4 }}
-					 
 						fontWeight={500}
 						fontSize={{ md: 68, base: 28 }}>
 						Я ищу...
@@ -70,17 +72,36 @@ const Looking = () => {
 						))}
 					</Box>
 
-					<Box	
+					<Box
 						display={{ md: "flex", base: "none" }}
 						flexDir="column"
 						alignItems="end"
 						justifyContent="end">
 						<Image
-							data-aos="fade-up"
-							style={{ width: "100%", height: "367px" }}
+							style={{ width: "100%", height: "367px", borderRadius: "20px" }}
 							src={img}
 							alt="img"
 						/>
+
+						<Box
+							p="0"
+							position="absolute"
+							w={{ md: 400, base: 360 }}
+							h={{ md: "120px", base: "100px" }}
+							mt={20}
+							ml={20}>
+							<Image
+								style={{
+									width: "100%",
+									height: "100%",
+									position: "absolute",
+									marginLeft: "2px",
+									marginTop: "3px",
+								}}
+								src={imgbtn}
+								alt="img"
+							/>
+						</Box>
 						<Flex
 							data-aos="fade-up"
 							justifyContent="end"
@@ -113,11 +134,31 @@ const Looking = () => {
 						alignItems="end"
 						justifyContent="end">
 						<Image
-							style={{ width: "100%", height: "250px" }}
-							src={img_mobile}
+							style={{ width: "100%", height: "250px",borderRadius:"20px" }}
+							src={img}
 							alt="img"
 						/>
+						<Box
+							p="0"
+							position="absolute"
+							w={{ md: 400, base: 320 }}
+							h={{ md: "120px", base: "100px" }}
+							mt={20}
+							ml={20}>
+							<Image
+								style={{
+									width: "100%",
+									height: "100%",
+									position: "absolute",
+									marginLeft: "2px",
+									marginTop: "3px",
+								}}
+								src={imgbtn}
+								alt="img"
+							/>
+						</Box>
 						<Flex justifyContent="end" position="absolute" gap={1} mt={-16}>
+						 
 							<Link href={"/catalog"}>
 								<Button
 									fontSize="15px"
