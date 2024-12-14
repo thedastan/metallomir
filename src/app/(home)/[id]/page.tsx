@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { title, description } = await fetchCatalogData(id);
   
   return {
-    title,
+    title: `${title} в Бишкеке`,
     description,
     robots: "index, follow",
     authors: [{ name: title }],

@@ -5,14 +5,12 @@ import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 import { PHONE_NUMBER } from "@/constants/admin";
-import { BiLogoTelegram } from "react-icons/bi";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaYoutube } from "react-icons/fa6";
-import { INSTAGRAM_LINK, TELEGRAM_LINK, YOUTUBE_LINK } from "@/constants/admin";
+
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import styles from "./burger.module.scss"; // Импортируем стили
+import { links, nav } from "./data";
 
 const Header = () => {
 	const pathname = usePathname();
@@ -21,19 +19,6 @@ const Header = () => {
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
-
-	const nav = [
-		{ name: "Главная", path: "/" },
-		{ name: "о компании", path: "/about-company" },
-		{ name: "продукции", path: "/catalog" },
-		{ name: "контакты", path: "#contact" },
-	];
-
-	const links = [
-		{ path: TELEGRAM_LINK, icon: <BiLogoTelegram /> },
-		{ path: INSTAGRAM_LINK, icon: <AiFillInstagram /> },
-		{ path: YOUTUBE_LINK, icon: <FaYoutube /> },
-	];
 
 	return (
 		<Box

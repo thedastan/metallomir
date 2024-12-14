@@ -9,12 +9,8 @@ import Providers from "./provider";
 import { gilroy } from "@/constants/fonts/fonts";
 
 export const metadata: Metadata = {
-	title: {
-		default: SITE_NAME,
-		template: `%s | ${SITE_NAME}`,
-	},
+	title:  SITE_NAME,
 	description: SEO_DESCRIPTION,
-
 	openGraph: {
 		url: SEO_IMAGE,
 	},
