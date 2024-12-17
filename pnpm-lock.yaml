@@ -95,9 +95,6 @@ importers:
       swiper:
         specifier: ^11.1.15
         version: 11.1.15
-      ui:
-        specifier: link:@types/@fancyapps/ui
-        version: link:@types/@fancyapps/ui
     devDependencies:
       '@types/aos':
         specifier: ^3.0.7
